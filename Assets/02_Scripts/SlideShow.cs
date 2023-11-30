@@ -18,19 +18,55 @@ public class SlideShow : MonoBehaviour
         {
             Debug.LogWarning("슬라이드 이미지가 존재하지 않습니다.");
         }
+        else
+        {
+            // Material의 Basemap과 Emission 색상을 흰색으로 설정
+            screenMaterial.color = Color.white;
+            screenMaterial.SetColor("_EmissionColor", Color.white);
+            
+            // 첫 슬라이드 이미지 적용 
+            ChangeSlide(currentSlide);
+        }
     }
 
+    public void RightButton()
+    {
+        currentSlide = (currentSlide + 1) % slides.Length;
+        ChangeSlide(currentSlide);
+    }
+
+    public void LeftButton()
+    {
+        if (currentSlide == 0)
+        {
+            currentSlide = slides.Length - 1;
+        }
+        else
+        {
+            currentSlide--;
+        }
+        ChangeSlide(currentSlide);
+    }
+
+    public void CompleteShow()
+    {
+        // Material의 BaseMap과 Emission 색상을 검정색으로 변경
+        screenMaterial.color = Color.black;
+        screenMaterial.SetColor("_EmissionColor", Color.black);
+    }
+    
     void ChangeSlide(int slideIndex)
     {
         if (slideIndex >= 0 && slideIndex < slides.Length)
         {
             // 모니터의 Material에 새로운 텍스쳐 적용
-            screenMaterial.mainTexture = slides[slideIndex];
+            Texture2D slideTexture = slides[slideIndex];
+            screenMaterial.mainTexture = slideTexture;
+            screenMaterial.SetTexture("_EmissionMap", slideTexture);
         }
         else
         {
             Debug.LogError("슬라이드의 인덱스가 유효하지 않습니다.");
         }
-            
     }
 }

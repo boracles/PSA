@@ -630,6 +630,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ad2808a55d72fbf4fbbc96956543d230, type: 2}
+    - target: {fileID: 2229032678205019293, guid: c808236ebf3e1394e864c09295063382,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 96482b43f78eb2e4c914e8a0daa025f6, type: 2}
     - target: {fileID: 2426472552758130932, guid: c808236ebf3e1394e864c09295063382,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2539,7 +2544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptText: {fileID: 1938304849}
   scriptFileName: ILoveYou.txt
-  scrollSpeed: 0.01
+  scrollSpeed: 0.03
   playButton: {fileID: 899556957}
   pauseButton: {fileID: 361588719}
 --- !u!1001 &642792648
@@ -3987,7 +3992,7 @@ PrefabInstance:
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
@@ -3997,7 +4002,7 @@ PrefabInstance:
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
@@ -4008,8 +4013,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 8019558048596780326, guid: 5e50eba45ef63694ab6dad66efcbb007,
-        type: 3}
+      objectReference: {fileID: 38526334}
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -4028,7 +4032,7 @@ PrefabInstance:
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetGrip
+      value: CompleteShow
       objectReference: {fileID: 0}
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
@@ -4038,7 +4042,7 @@ PrefabInstance:
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Autohand.Hand, Assembly-CSharp
+      value: SlideShow, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
@@ -4646,7 +4650,7 @@ GameObject:
   - component: {fileID: 1227182754}
   - component: {fileID: 1227182753}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

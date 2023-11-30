@@ -15,6 +15,9 @@ public class ScriptPrompter : MonoBehaviour
     private Coroutine scrollingCoroutine;
     private bool isScriptLoaded = false;    // 대본이 로드되었는지 여부
 
+    public GameObject playButton;
+    public GameObject pauseButton;
+
 
     public void ToggleScript()
     {
@@ -59,11 +62,15 @@ public class ScriptPrompter : MonoBehaviour
             if (scrollingCoroutine != null)
             {
                 StopCoroutine(scrollingCoroutine);
+                playButton.SetActive(true);
+                pauseButton.SetActive(false);
                 Debug.Log("스크롤 중지");
             }
             
             scrollingCoroutine = StartCoroutine(ScrollText());
             isScrolling = true;
+            playButton.SetActive(false);
+            pauseButton.SetActive(true);
             Debug.Log("스크롤 시작");
         }
     }
@@ -74,6 +81,8 @@ public class ScriptPrompter : MonoBehaviour
         {
             StopCoroutine(scrollingCoroutine);
             scrollingCoroutine = null;
+            playButton.SetActive(true);
+            pauseButton.SetActive(false);
             Debug.Log("스크롤 중지");
         }
         isScrolling = false;

@@ -17,6 +17,10 @@ public class AudienceGazeController : MonoBehaviour
     private Transform currentTarget;
     private Vector3 lookAtPosition;
 
+    public enum AudienceType {FOCUS, NONFOCUS}
+    public AudienceType audienceType;
+    private static readonly int TiredStayAwake = Animator.StringToHash("TiredStayAwake");
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -27,7 +31,8 @@ public class AudienceGazeController : MonoBehaviour
         {
             gameObject.tag = "LaptopOwner";
         }
-        
+
+        audienceType = (AudienceType) GetComponent<AudienceController>().audience.audienceType;
         SetRandomTarget();
     }
 
@@ -40,7 +45,7 @@ public class AudienceGazeController : MonoBehaviour
         }
 
         if (currentTarget)
-        {
+        { 
             lookAtPosition = Vector3.Lerp(lookAtPosition, currentTarget.position, Time.deltaTime * transitionSpeed);
         }
     }
@@ -60,17 +65,15 @@ public class AudienceGazeController : MonoBehaviour
 
     void SetRandomTarget()
     {
-        int randomChoice;
-
-        if (gameObject.CompareTag("LaptopOwner"))
+        int maxRange = gameObject.CompareTag("LaptopOwner") ? 3 : 2;
+        
+        // NONFOCUS 타입일 경우, 추가적인 선택지 제공
+        if (audienceType == AudienceType.NONFOCUS)
         {
-            // 노트북을 갖고 있는 캐릭터라면 노트북을 바라보도록 설정
-            randomChoice = Random.Range(0, 3);
+            maxRange++;
         }
-        else
-        {
-            randomChoice = Random.Range(0, 2);
-        }
+        
+        int randomChoice = Random.Range(0, maxRange);
 
         switch (randomChoice)
         {
@@ -87,8 +90,21 @@ public class AudienceGazeController : MonoBehaviour
                     currentTarget = transform.Find("Laptop");
                 }
                 break;
+            case 3:
+                // NONFOCUS 타입일 경우, 시선 고정 해제 및 애니메이션 실행
+                if (audienceType == AudienceType.NONFOCUS)
+                {
+                    animator.SetTrigger(TiredStayAwake);
+                    currentTarget = null;
+                }
+                break;
         }
         // 무작위로 대상과 시간을 선택 
         lookTimer = Random.Range(minLookTime, maxLookTime);
+    }
+
+    public void ResetTiredState()
+    {
+        SetRandomTarget();
     }
 }

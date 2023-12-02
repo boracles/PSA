@@ -61,7 +61,7 @@ ModelImporter:
       curves: []
       events:
       - time: 1
-        functionName: ChooseReaction
+        functionName: ResetTiredState
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4,
           type: 3}

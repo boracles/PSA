@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 public class LookatController : MonoBehaviour
 {
@@ -22,9 +22,13 @@ public class LookatController : MonoBehaviour
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         pptScreen = GameObject.Find("Level").transform.Find("PPTScreen");
+
+        if (transform.Find("Laptop"))
+        {
+            gameObject.tag = "LaptopOwner";
+        }
+        
         SetRandomTarget();
-        currentTarget = player;
-        lookAtPosition = currentTarget.position;    // 초기 대상의 위치로 선정
     }
 
     void Update()
@@ -56,8 +60,35 @@ public class LookatController : MonoBehaviour
 
     void SetRandomTarget()
     {
+        int randomChoice;
+
+        if (gameObject.CompareTag("LaptopOwner"))
+        {
+            // 노트북을 갖고 있는 캐릭터라면 노트북을 바라보도록 설정
+            randomChoice = Random.Range(0, 3);
+        }
+        else
+        {
+            randomChoice = Random.Range(0, 2);
+        }
+
+        switch (randomChoice)
+        {
+            case 0:
+                currentTarget = player;
+                break;
+            case 1:
+                currentTarget = pptScreen;
+                break;
+            case 2:
+                if (gameObject.CompareTag("LaptopOwner"))
+                {
+                    // 노트북을 갖고 있는 캐릭터인 경우 노트북을 바라보도록 설정
+                    currentTarget = transform.Find("Laptop");
+                }
+                break;
+        }
         // 무작위로 대상과 시간을 선택 
-        currentTarget = UnityEngine.Random.Range(0, 2) == 0 ? player : pptScreen;
-        lookTimer = UnityEngine.Random.Range(minLookTime, maxLookTime);
+        lookTimer = Random.Range(minLookTime, maxLookTime);
     }
 }

@@ -106,5 +106,6 @@ public class AudienceGazeController : MonoBehaviour
     public void ResetTiredState()
     {
         SetRandomTarget();
+        Debug.Log("피곤상태초기화");
     }
 }

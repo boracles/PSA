@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class LookatController : MonoBehaviour
+public class AudienceGazeController : MonoBehaviour
 {
     private Transform player;
     private Transform pptScreen;

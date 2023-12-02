@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class SlideShow : MonoBehaviour
     private Texture2D[] slides;     //슬라이드 이미지들을 저장할 배열
     private int currentSlide = 0;   // 현재 슬라이드 인덱스
     
-    void Start()
+    public void PTStart()
     {
         //Resources 폴더에서 모든 Texutre2D 타임의 이미지를 로드 
         slides = Resources.LoadAll<Texture2D>("");
@@ -54,7 +55,14 @@ public class SlideShow : MonoBehaviour
         screenMaterial.color = Color.black;
         screenMaterial.SetColor("_EmissionColor", Color.black);
     }
-    
+
+    private void OnDisable()
+    {
+        // Material의 BaseMap과 Emission 색상을 검정색으로 변경
+        screenMaterial.color = Color.black;
+        screenMaterial.SetColor("_EmissionColor", Color.black);
+    }
+
     void ChangeSlide(int slideIndex)
     {
         if (slideIndex >= 0 && slideIndex < slides.Length)

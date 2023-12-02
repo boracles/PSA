@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -48,6 +49,14 @@ public class ScriptPrompter : MonoBehaviour
     }
 
     public void CompleteScript()
+    {
+        StopScrolling();
+        isScriptLoaded = false;
+        scriptText.text = ""; // 텍스트 내용 비우기
+        Debug.Log("대본 완료 및 리셋");
+    }
+
+    private void OnDisable()
     {
         StopScrolling();
         isScriptLoaded = false;

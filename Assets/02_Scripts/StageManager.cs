@@ -37,21 +37,42 @@ public class StageManager : MonoBehaviour
 
     void SetCurrentStage()
     {
-        //현재 씬의 이름을 얻음 
         string sceneName = SceneManager.GetActiveScene().name;
-        
-        //씬 이름을 정수로 변환하여 현재 단계를 설정
-        if (int.TryParse(sceneName, out int stageNumber) && stageNumber >= 1 && stageNumber <= 4)
+    
+        if (int.TryParse(sceneName, out int stageNumber))
         {
-            currentStage = stageNumber;
-            Debug.Log($"현재 단계 = {stageNumber}");
+            if (stageNumber >= 0 && stageNumber <= 3)
+            {
+                currentStage = stageNumber;
+                Debug.Log($"현재 단계 = {stageNumber}");
+
+                // 0번 씬(명상 단계)에 대한 특별한 처리
+                if (stageNumber == 0)
+                {
+                    HandleMeditationStage();
+                }
+            }
+            else
+            {
+                Debug.LogError("씬 번호가 유효한 범위를 벗어났습니다");
+                currentStage = 0;
+            }
         }
         else
         {
             Debug.LogError("씬 이름을 확인해 주세요");
-            currentStage = 0; // 유효하지 않은 단계
+            currentStage = 0;
         }
     }
+
+    // 명상 단계에 대한 처리를 하는 함수
+    void HandleMeditationStage()
+    {
+        // 명상 단계에 필요한 설정이나 동작을 여기에 구현
+        Debug.Log("명상 단계 시작");
+    }
+
+    
     
     // 현재 단계를 반환하는 함수 
     public int GetCurrentStage()

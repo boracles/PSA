@@ -49,7 +49,7 @@ public class SetAudienceGroup : MonoBehaviour
                 nonFocusCount = 28;
                 break;
             default:
-                Debug.LogError("잘못된 단계입니다.");
+                Debug.Log("명상단계입니다.");
                 return;
         }
 

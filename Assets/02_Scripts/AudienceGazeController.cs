@@ -10,6 +10,8 @@ public class AudienceGazeController : MonoBehaviour
     private Transform pptScreen;
     private Animator animator;
 
+    public StageManager stageManager;
+
     public float minLookTime = 2.0f;
     public float maxLookTime = 5.0f;
     public float transitionSpeed = 1.0f;    // 시선 이동 속도
@@ -29,6 +31,8 @@ public class AudienceGazeController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         pptScreen = GameObject.Find("Level").transform.Find("PPTScreen");
 
+        stageManager = StageManager.Instance;
+        
         if (transform.Find("Laptop"))
         {
             gameObject.tag = "LaptopOwner";
@@ -122,7 +126,7 @@ public class AudienceGazeController : MonoBehaviour
                 // NONFOCUS 타입일 경우, 시선 고정 해제 및 애니메이션 실행
                 if (audienceType == AudienceType.NONFOCUS)
                 {
-                    animator.SetTrigger(TiredStayAwake);
+                    TriggerRandomAnimation(stageManager.GetCurrentStage());
                     currentTarget = null;
                     isPlayingAnimation = true; // 애니메이션 재생 시작
                 }
@@ -132,6 +136,26 @@ public class AudienceGazeController : MonoBehaviour
         lookTimer = Random.Range(minLookTime, maxLookTime);
     }
 
+    void TriggerRandomAnimation(int stage)
+    {
+        string[] triggers;
+    
+        if (stage == 2)
+        {
+            triggers = new string[] {"TiredStayAwake", "LookingAround", "Stretching"};
+        }
+        else if (stage == 3)
+        {
+            triggers = new string[] {"TiredStayAwake", "LookingAround", "Stretching", "Sneezing", "Chatting"};
+        }
+        else
+        {
+            return; // 다른 스테이지의 경우 아무것도 하지 않음
+        }
+
+        string selectedTrigger = triggers[Random.Range(0, triggers.Length)];
+        animator.SetTrigger(selectedTrigger);
+    }
     // 애니메이션이 끝나면 다시 상태 설정 모드로 진입
     public void ResetTiredState()
     {

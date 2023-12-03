@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -42,12 +41,12 @@ public class SetAudienceGroup : MonoBehaviour
                 nonFocusCount = 0;
                 break;
             case 2:
-                focusCount = 15;
-                nonFocusCount = 10;
+                focusCount = 18;
+                nonFocusCount = 16;
                 break;
             case 3:
-                focusCount = 5;
-                nonFocusCount = 25;
+                focusCount = 6;
+                nonFocusCount = 28;
                 break;
             default:
                 Debug.LogError("잘못된 단계입니다.");

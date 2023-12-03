@@ -42,16 +42,12 @@ public class SetAudienceGroup : MonoBehaviour
                 nonFocusCount = 0;
                 break;
             case 2:
-                focusCount = 18;
-                nonFocusCount = 7;
+                focusCount = 15;
+                nonFocusCount = 10;
                 break;
             case 3:
-                focusCount = 10;
-                nonFocusCount = 15;
-                break;
-            case 4:
                 focusCount = 5;
-                nonFocusCount = 20;
+                nonFocusCount = 25;
                 break;
             default:
                 Debug.LogError("잘못된 단계입니다.");

@@ -96,7 +96,7 @@ public class AudienceGazeController : MonoBehaviour
 
         foreach (var audience in audiences)
         {
-            if (audienceType == AudienceType.NONFOCUS)
+            if (audience.audience.audienceType == (global::AudienceType) AudienceType.NONFOCUS)
             {
                 audienceChangeTimers[audience] = Random.Range(10f, 20f); // 각 청중에 대한 초기 랜덤 타이머 설정
             }
@@ -120,7 +120,7 @@ public class AudienceGazeController : MonoBehaviour
     private void ChangeAnimationControllerForNonFocusAudience()
     {
         AudienceController[] nonFocusAudiences = FindObjectsOfType<AudienceController>()
-            .Where(audience => audienceType == AudienceType.NONFOCUS)
+            .Where(audience => audience.audience.audienceType == (global::AudienceType) AudienceType.NONFOCUS)
             .ToArray();
 
         foreach (var audience in nonFocusAudiences)
@@ -240,5 +240,13 @@ public class AudienceGazeController : MonoBehaviour
         Debug.Log("피곤상태초기화");
 
         currentTarget = player;
+    }
+    
+    public void StartClapping()
+    {
+        if (animator)
+        {
+            animator.SetTrigger("Clapping");
+        }
     }
 }

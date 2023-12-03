@@ -64,4 +64,13 @@ public class StageManager : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+    
+    public void OnPresentationComplete()
+    {
+        AudienceGazeController[] audienceMembers = FindObjectsOfType<AudienceGazeController>();
+        foreach (var member in audienceMembers)
+        {
+            member.StartClapping();
+        }
+    }
 }

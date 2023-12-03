@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.47686577, g: 0.6526944, b: 0.87665164, a: 1}
+  m_IndirectSpecularColor: {r: 0.87864447, g: 0.6766424, b: 0.4766341, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -369,6 +369,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -6215973713121655893, guid: c808236ebf3e1394e864c09295063382,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.073
+      objectReference: {fileID: 0}
     - target: {fileID: -6018197967690649560, guid: c808236ebf3e1394e864c09295063382,
         type: 3}
       propertyPath: m_Layer
@@ -443,7 +448,7 @@ PrefabInstance:
     - target: {fileID: -4352035537116471441, guid: c808236ebf3e1394e864c09295063382,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.547
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: -4352035537116471441, guid: c808236ebf3e1394e864c09295063382,
         type: 3}
@@ -516,6 +521,12 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -1546490595574116722, guid: c808236ebf3e1394e864c09295063382,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3078419008016588585, guid: 1d510d6adc98a9d448aa1209138a179b,
+        type: 3}
     - target: {fileID: -1545944319894401021, guid: c808236ebf3e1394e864c09295063382,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4305,8 +4316,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.96743095, b: 0.91194963, a: 1}
-  m_Intensity: 2
-  m_Range: 10.180466
+  m_Intensity: 3
+  m_Range: 10.2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5697,7 +5708,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d3b20ac781b9c424cbb18365a47daacc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8834,7 +8845,7 @@ PrefabInstance:
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.027
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
@@ -8880,11 +8891,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992776023468930093, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
-        type: 3}
-      propertyPath: field of view
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1992776023468930093, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}

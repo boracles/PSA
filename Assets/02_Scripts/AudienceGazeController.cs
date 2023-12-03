@@ -139,8 +139,21 @@ public class AudienceGazeController : MonoBehaviour
             // FOCUS 그룹이고, StageManager의 currentStage가 1 또는 2일 경우 상체를 발표자 쪽으로 기울임
             if (audienceType == AudienceType.FOCUS && (stageManager.GetCurrentStage() == 1 || stageManager.GetCurrentStage() == 2))
             {
-                animator.SetLookAtWeight(1.0f, 0.5f); // 0.5는 상체 시선의 가중치 (조절 가능)
+                animator.SetLookAtWeight(1.0f, 0.5f); // 상체 시선의 가중치 조절
                 animator.SetLookAtPosition(player.position);
+
+                // 손의 IK 위치를 현재 위치에서 조금 아래로 조정
+                Vector3 rightHandIKPosition = animator.GetIKPosition(AvatarIKGoal.RightHand);
+                Vector3 leftHandIKPosition = animator.GetIKPosition(AvatarIKGoal.LeftHand);
+
+                rightHandIKPosition.y -= 0.05f;
+                leftHandIKPosition.y -= 0.05f;
+
+                animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1.0f);
+                animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandIKPosition);
+
+                animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
+                animator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandIKPosition);
             }
             else if (currentTarget)
             {
@@ -150,6 +163,7 @@ public class AudienceGazeController : MonoBehaviour
             }
         }
     }
+
 
     void SetRandomTarget()
     {

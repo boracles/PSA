@@ -14,8 +14,10 @@ public class AudienceGazeController : MonoBehaviour
     public float maxLookTime = 5.0f;
     public float transitionSpeed = 1.0f;    // 시선 이동 속도
     private float lookTimer;
-    private Transform currentTarget;
+    public Transform currentTarget;
     private Vector3 lookAtPosition;
+    private bool isPlayingAnimation = false;    // 애니메이션이 재생 중인지 나타내는 플래그
+    public int randomChoice = 1;
 
     public enum AudienceType {FOCUS, NONFOCUS}
     public AudienceType audienceType;
@@ -33,19 +35,26 @@ public class AudienceGazeController : MonoBehaviour
         }
 
         audienceType = (AudienceType) GetComponent<AudienceController>().audience.audienceType;
-        SetRandomTarget();
+        
+        // 초기 시선 대상을 플레이어로 설정하고 타이머 재설정
+        currentTarget = player;
+        lookTimer = Random.Range(minLookTime, maxLookTime);
     }
 
     void Update()
     {
-        lookTimer -= Time.deltaTime;
-        if (lookTimer <= 0)
+        if (!isPlayingAnimation)
         {
-            SetRandomTarget();
+            // 애니메이션이 재생되지 않는 동안에만 LookTimer 업데이트
+            lookTimer -= Time.deltaTime;
+            if (lookTimer <= 0)
+            {
+                SetRandomTarget();
+            }
         }
-
-        if (currentTarget)
-        { 
+        
+        if (currentTarget != null)
+        {
             lookAtPosition = Vector3.Lerp(lookAtPosition, currentTarget.position, Time.deltaTime * transitionSpeed);
         }
     }
@@ -65,15 +74,29 @@ public class AudienceGazeController : MonoBehaviour
 
     void SetRandomTarget()
     {
-        int maxRange = gameObject.CompareTag("LaptopOwner") ? 3 : 2;
+        int maxRange;
         
-        // NONFOCUS 타입일 경우, 추가적인 선택지 제공
-        if (audienceType == AudienceType.NONFOCUS)
+        if (audienceType == AudienceType.FOCUS)
         {
-            maxRange++;
+            // FOCUS 그룹
+            maxRange = gameObject.CompareTag("LaptopOwner") ? 3 : 2; // 노트북 소유 시 0, 1, 2 선택, 그렇지 않으면 0, 1 선택
+        }
+        else
+        {
+            // NONFOCUS 그룹
+            maxRange = 4; // 일단 0, 1, 2, 3 중에서 선택
         }
         
-        int randomChoice = Random.Range(0, maxRange);
+        randomChoice = Random.Range(0, maxRange);
+        
+        if (audienceType == AudienceType.NONFOCUS && !gameObject.CompareTag("LaptopOwner"))
+        {
+            // NONFOCUS 그룹에서 노트북을 갖고 있지 않은 경우 case 2를 제외하고 0, 1, 3 중에서 선택
+            if (randomChoice == 2)
+            {
+                randomChoice = 3;
+            }
+        }
 
         switch (randomChoice)
         {
@@ -89,6 +112,11 @@ public class AudienceGazeController : MonoBehaviour
                     // 노트북을 갖고 있는 캐릭터인 경우 노트북을 바라보도록 설정
                     currentTarget = transform.Find("Laptop");
                 }
+                else if (audienceType == AudienceType.NONFOCUS)
+                {
+                    // NONFOCUS 그룹에서 노트북이 없는 경우에는 case 3 처리
+                    goto case 3;
+                }
                 break;
             case 3:
                 // NONFOCUS 타입일 경우, 시선 고정 해제 및 애니메이션 실행
@@ -96,6 +124,7 @@ public class AudienceGazeController : MonoBehaviour
                 {
                     animator.SetTrigger(TiredStayAwake);
                     currentTarget = null;
+                    isPlayingAnimation = true; // 애니메이션 재생 시작
                 }
                 break;
         }
@@ -103,9 +132,14 @@ public class AudienceGazeController : MonoBehaviour
         lookTimer = Random.Range(minLookTime, maxLookTime);
     }
 
+    // 애니메이션이 끝나면 다시 상태 설정 모드로 진입
     public void ResetTiredState()
     {
+        animator.CrossFade("Idle", 0.5f);
+        isPlayingAnimation = false; // 애니메이션 재생 종료
         SetRandomTarget();
         Debug.Log("피곤상태초기화");
+
+        currentTarget = player;
     }
 }

@@ -1,6 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,6 +9,9 @@ public class AudienceGazeController : MonoBehaviour
     private Transform pptScreen;
     private Animator animator;
 
+    public RuntimeAnimatorController sittingLCrossedController;
+    public RuntimeAnimatorController sittingRCrossedController;
+    
     public StageManager stageManager;
 
     public float minLookTime = 2.0f;
@@ -24,6 +26,8 @@ public class AudienceGazeController : MonoBehaviour
     public enum AudienceType {FOCUS, NONFOCUS}
     public AudienceType audienceType;
     private static readonly int TiredStayAwake = Animator.StringToHash("TiredStayAwake");
+
+    private Dictionary<AudienceController, float> audienceChangeTimers = new Dictionary<AudienceController, float>();
 
     void Start()
     {
@@ -43,6 +47,8 @@ public class AudienceGazeController : MonoBehaviour
         // 초기 시선 대상을 플레이어로 설정하고 타이머 재설정
         currentTarget = player;
         lookTimer = Random.Range(minLookTime, maxLookTime);
+        
+        InitializeAudienceChangeTimers();
     }
 
     void Update()
@@ -61,18 +67,87 @@ public class AudienceGazeController : MonoBehaviour
         {
             lookAtPosition = Vector3.Lerp(lookAtPosition, currentTarget.position, Time.deltaTime * transitionSpeed);
         }
-    }
+        
+        // StageManager의 currentStage가 2단계 또는 3단계일 경우 AnimationController 교체
+        if (stageManager.GetCurrentStage() == 2 || stageManager.GetCurrentStage() == 3)
+        {
+            ChangeAnimationControllerForNonFocusAudience();
+            foreach (var audiencePair in audienceChangeTimers.ToList())
+            {
+                var audience = audiencePair.Key;
+                var timer = audiencePair.Value;
 
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    ChangeAudienceAnimationController(audience);
+                    audienceChangeTimers[audience] = Random.Range(10f, 20f); // 다음 변경을 위한 새로운 랜덤 타이머 설정
+                }
+                else
+                {
+                    audienceChangeTimers[audience] = timer;
+                }
+            }
+        }
+    }
+    private void InitializeAudienceChangeTimers()
+    {
+        var audiences = FindObjectsOfType<AudienceController>();
+
+        foreach (var audience in audiences)
+        {
+            if (audienceType == AudienceType.NONFOCUS)
+            {
+                audienceChangeTimers[audience] = Random.Range(10f, 20f); // 각 청중에 대한 초기 랜덤 타이머 설정
+            }
+        }
+    }
+    private void ChangeAudienceAnimationController(AudienceController audience)
+    {
+        if (!audience.CompareTag("LaptopOwner"))
+        {
+            // 이름이 "L"이면 SittingLCrossed, "R"이면 SittingRCrossed로 교체
+            if (audience.name == "L")
+            {
+                audience.GetComponent<Animator>().runtimeAnimatorController = sittingLCrossedController;
+            }
+            else if (audience.name == "R")
+            {
+                audience.GetComponent<Animator>().runtimeAnimatorController = sittingRCrossedController;
+            }
+        }
+    }
+    private void ChangeAnimationControllerForNonFocusAudience()
+    {
+        AudienceController[] nonFocusAudiences = FindObjectsOfType<AudienceController>()
+            .Where(audience => audienceType == AudienceType.NONFOCUS)
+            .ToArray();
+
+        foreach (var audience in nonFocusAudiences)
+        {
+            if (Random.Range(0, 2) == 0) // 50% 확률로 선택
+            {
+                ChangeAudienceAnimationController(audience);
+            }
+        }
+    }
+    
     private void OnAnimatorIK(int layerIndex)
     {
-        if (animator && currentTarget)
+        if (animator)
         {
-            // IK의 가중치를 설정
-            animator.SetLookAtWeight(1.0f);
-
-            // 캐릭터가 플레이어의 카메라를 바라보게 설정
-            animator.SetLookAtPosition(lookAtPosition); // 현재의 lookAtPosition을 사용하여 부드러운 움직임 구현
-
+            // FOCUS 그룹이고, StageManager의 currentStage가 1 또는 2일 경우 상체를 발표자 쪽으로 기울임
+            if (audienceType == AudienceType.FOCUS && (stageManager.GetCurrentStage() == 1 || stageManager.GetCurrentStage() == 2))
+            {
+                animator.SetLookAtWeight(1.0f, 0.5f); // 0.5는 상체 시선의 가중치 (조절 가능)
+                animator.SetLookAtPosition(player.position);
+            }
+            else if (currentTarget)
+            {
+                // 기본 시선 처리
+                animator.SetLookAtWeight(1.0f);
+                animator.SetLookAtPosition(lookAtPosition);
+            }
         }
     }
 

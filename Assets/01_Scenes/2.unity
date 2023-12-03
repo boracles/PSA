@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.47686577, g: 0.6526944, b: 0.87665164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 6b54fd9692fe9124191c31991d2e778b,
+  m_LightingDataAsset: {fileID: 112000000, guid: 46d366667e9a37741889e5e5ef022959,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: cbc5ab64a91df3042a0701642ed74c6b,
     type: 2}
@@ -384,11 +384,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d3b20ac781b9c424cbb18365a47daacc, type: 2}
-    - target: {fileID: -5169578811043067064, guid: c808236ebf3e1394e864c09295063382,
-        type: 3}
-      propertyPath: m_ImportantGI
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -5169578811043067064, guid: c808236ebf3e1394e864c09295063382,
         type: 3}
       propertyPath: m_LightmapParameters
@@ -916,6 +911,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1774843447}
+    - targetCorrespondingSourceObject: {fileID: 3561771208839646599, guid: c808236ebf3e1394e864c09295063382,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1091318076}
     - targetCorrespondingSourceObject: {fileID: 8891792828147989070, guid: c808236ebf3e1394e864c09295063382,
         type: 3}
       insertIndex: -1
@@ -1071,6 +1070,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -1145,7 +1148,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c16eb65c17aa7464db25563643763fec,
         type: 3}
       propertyPath: m_Name
-      value: W_09 (1)
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5638118970992584321, guid: c16eb65c17aa7464db25563643763fec,
         type: 3}
@@ -1208,6 +1211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -1276,13 +1283,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4c0e64befb2dd42a68c7d1cd7f861700,
         type: 3}
       propertyPath: m_Name
-      value: W_04
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 4c0e64befb2dd42a68c7d1cd7f861700,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: e97e8da5445d118469384a65d627fa0b, type: 2}
+      objectReference: {fileID: 9100000, guid: 523c27a9d3e6c9f4eb3809de6a5ed131, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1318,6 +1325,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -1406,13 +1417,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dd551d5c8be93ad46b51dad5ba436b3b,
         type: 3}
       propertyPath: m_Name
-      value: W_03
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: dd551d5c8be93ad46b51dad5ba436b3b,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1464,6 +1475,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -1752,7 +1767,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dd660430ea4724c66986d4a4f0f45d19,
         type: 3}
       propertyPath: m_Name
-      value: M_09
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: dd660430ea4724c66986d4a4f0f45d19,
         type: 3}
@@ -1796,6 +1811,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -1917,6 +1936,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -1962,6 +1985,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -2328,7 +2355,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 378114e3db43343b0854ed7f337cdf4d,
         type: 3}
       propertyPath: m_Name
-      value: W_08
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 378114e3db43343b0854ed7f337cdf4d,
         type: 3}
@@ -2372,6 +2399,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -2594,13 +2625,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c062e9205bfd04c0388e2a86e502d6f3,
         type: 3}
       propertyPath: m_Name
-      value: M_04
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: c062e9205bfd04c0388e2a86e502d6f3,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: e97e8da5445d118469384a65d627fa0b, type: 2}
+      objectReference: {fileID: 9100000, guid: 523c27a9d3e6c9f4eb3809de6a5ed131, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2642,6 +2673,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -2773,13 +2808,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3c80568e2ba08481e954fcc72be4c3bc,
         type: 3}
       propertyPath: m_Name
-      value: M_08
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 3c80568e2ba08481e954fcc72be4c3bc,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2817,6 +2852,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -2904,7 +2943,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 02cef7f4449084ff19e1ffcdd43ddcf6,
         type: 3}
       propertyPath: m_Name
-      value: M_12 (1)
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 02cef7f4449084ff19e1ffcdd43ddcf6,
         type: 3}
@@ -2962,6 +3001,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -3043,7 +3086,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3216,13 +3259,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb5771238c81840b7894da2d3d3f8692,
         type: 3}
       propertyPath: m_Name
-      value: W_05 (1)
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: fb5771238c81840b7894da2d3d3f8692,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     - target: {fileID: 6881603246515592277, guid: fb5771238c81840b7894da2d3d3f8692,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3279,6 +3322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -3471,13 +3518,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 02cef7f4449084ff19e1ffcdd43ddcf6,
         type: 3}
       propertyPath: m_Name
-      value: M_12
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 02cef7f4449084ff19e1ffcdd43ddcf6,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3509,6 +3556,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -3765,13 +3816,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ac82a2777100f4de18bfe8d413df8412,
         type: 3}
       propertyPath: m_Name
-      value: W_02
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: ac82a2777100f4de18bfe8d413df8412,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3803,6 +3854,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -4161,6 +4216,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -4236,7 +4295,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.96743095, b: 0.91194963, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 2
   m_Range: 10.180466
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4556,13 +4615,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 89db6a07182e5440284e019651215966,
         type: 3}
       propertyPath: m_Name
-      value: M_10
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 89db6a07182e5440284e019651215966,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: e97e8da5445d118469384a65d627fa0b, type: 2}
+      objectReference: {fileID: 9100000, guid: 523c27a9d3e6c9f4eb3809de6a5ed131, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4604,6 +4663,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -4625,6 +4688,124 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audience:
     audienceType: 0
+--- !u!1 &1091318075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091318076}
+  - component: {fileID: 1091318078}
+  - component: {fileID: 1091318077}
+  m_Layer: 10
+  m_Name: Area Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1091318076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091318075}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000023461297, y: 1, z: -0, w: 0.00000035998443}
+  m_LocalPosition: {x: 11.4, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 664808079}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1091318077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091318075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &1091318078
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091318075}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 3
+  m_Shape: 0
+  m_Color: {r: 1, g: 0.9824525, b: 0.9402515, a: 1}
+  m_Intensity: 2
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 8.695143, y: 72.2507}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 7.02e-43, y: 2.7640108e-18, z: 6.98e-43, w: 7e-45}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &1094931625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4686,7 +4867,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2fdf2aa937e114b4691fe68e4b052d0e,
         type: 3}
       propertyPath: m_Name
-      value: W_12
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 2fdf2aa937e114b4691fe68e4b052d0e,
         type: 3}
@@ -4730,6 +4911,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -4894,13 +5079,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c16eb65c17aa7464db25563643763fec,
         type: 3}
       propertyPath: m_Name
-      value: W_09
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: c16eb65c17aa7464db25563643763fec,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4938,6 +5123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -5020,7 +5209,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 89db6a07182e5440284e019651215966,
         type: 3}
       propertyPath: m_Name
-      value: M_10 (1)
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 89db6a07182e5440284e019651215966,
         type: 3}
@@ -5258,13 +5447,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9052c5bf159d14ac9a9c134f21c12f86,
         type: 3}
       propertyPath: m_Name
-      value: M_11
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 9052c5bf159d14ac9a9c134f21c12f86,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5302,6 +5491,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -5384,7 +5577,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 378114e3db43343b0854ed7f337cdf4d,
         type: 3}
       propertyPath: m_Name
-      value: W_08 (1)
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 2870453266510424877, guid: 378114e3db43343b0854ed7f337cdf4d,
         type: 3}
@@ -5395,7 +5588,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5470,13 +5663,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 08ca09eb4d8b043819e3d9ad16540872,
         type: 3}
       propertyPath: m_Name
-      value: M_05
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 08ca09eb4d8b043819e3d9ad16540872,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5514,6 +5707,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -5596,13 +5793,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb5771238c81840b7894da2d3d3f8692,
         type: 3}
       propertyPath: m_Name
-      value: W_05
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: fb5771238c81840b7894da2d3d3f8692,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5634,6 +5831,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -5722,13 +5923,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d7de818c2f5644ec18b818507ad099bd,
         type: 3}
       propertyPath: m_Name
-      value: W_07
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d7de818c2f5644ec18b818507ad099bd,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5760,6 +5961,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -5848,7 +6053,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dd551d5c8be93ad46b51dad5ba436b3b,
         type: 3}
       propertyPath: m_Name
-      value: W_03 (1)
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 1241155858914527132, guid: dd551d5c8be93ad46b51dad5ba436b3b,
         type: 3}
@@ -5934,7 +6139,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2fdf2aa937e114b4691fe68e4b052d0e,
         type: 3}
       propertyPath: m_Name
-      value: W_12 (1)
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 2fdf2aa937e114b4691fe68e4b052d0e,
         type: 3}
@@ -6020,13 +6225,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dc922c7db4f414a42857b7560064a14c,
         type: 3}
       propertyPath: m_Name
-      value: M_03
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: dc922c7db4f414a42857b7560064a14c,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6064,6 +6269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -6159,7 +6368,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -6782,7 +6991,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 206d842a814084b7086e908e53638ffe,
         type: 3}
       propertyPath: m_Name
-      value: W_06
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 206d842a814084b7086e908e53638ffe,
         type: 3}
@@ -6820,6 +7029,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -6908,13 +7121,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5105b6386c926457aa796adf0bc1cff4,
         type: 3}
       propertyPath: m_Name
-      value: M_07
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 5105b6386c926457aa796adf0bc1cff4,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8a86aa14eecd944d8a23719a85605ad6, type: 2}
+      objectReference: {fileID: 9100000, guid: 4e7ac9ede9d7c724ebd4ee12efc2ef98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6952,6 +7165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -7046,7 +7263,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: efe6ab54aa842471ead0ba019c8837b6,
         type: 3}
       propertyPath: m_Name
-      value: W_11 (1)
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 4305221673032433821, guid: efe6ab54aa842471ead0ba019c8837b6,
         type: 3}
@@ -7132,7 +7349,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4454c510844ac49129c2839e4056abde,
         type: 3}
       propertyPath: m_Name
-      value: M_02
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 4454c510844ac49129c2839e4056abde,
         type: 3}
@@ -7176,6 +7393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -7263,7 +7484,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 08ca09eb4d8b043819e3d9ad16540872,
         type: 3}
       propertyPath: m_Name
-      value: M_05 (1)
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 08ca09eb4d8b043819e3d9ad16540872,
         type: 3}
@@ -7321,6 +7542,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -7396,7 +7621,7 @@ Light:
   m_Type: 3
   m_Shape: 0
   m_Color: {r: 1, g: 0.9824525, b: 0.9402515, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7507,7 +7732,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: efe6ab54aa842471ead0ba019c8837b6,
         type: 3}
       propertyPath: m_Name
-      value: W_11
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: efe6ab54aa842471ead0ba019c8837b6,
         type: 3}
@@ -7551,6 +7776,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -7610,6 +7839,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -7975,13 +8208,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9496a363a376448e78308dc49f4b7843,
         type: 3}
       propertyPath: m_Name
-      value: W_01
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 9496a363a376448e78308dc49f4b7843,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: e97e8da5445d118469384a65d627fa0b, type: 2}
+      objectReference: {fileID: 9100000, guid: 523c27a9d3e6c9f4eb3809de6a5ed131, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -8017,6 +8250,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -8240,7 +8477,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bf73c96f8c05f42c585d2410c1e0c3fb,
         type: 3}
       propertyPath: m_Name
-      value: M_06
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: bf73c96f8c05f42c585d2410c1e0c3fb,
         type: 3}
@@ -8278,6 +8515,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -8373,13 +8614,13 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.9757628, b: 0.9213836, a: 1}
-  m_Intensity: 6
+  m_Intensity: 8
   m_Range: 10
   m_SpotAngle: 41.497463
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -8618,7 +8859,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 73e40d0b399d5478da4c24b96551e9e4,
         type: 3}
       propertyPath: m_Name
-      value: W_10
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 73e40d0b399d5478da4c24b96551e9e4,
         type: 3}
@@ -8656,6 +8897,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -8744,7 +8989,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3a0950e11ef2c4a55b1abe2c3ff2bf1f,
         type: 3}
       propertyPath: m_Name
-      value: M_13
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 3a0950e11ef2c4a55b1abe2c3ff2bf1f,
         type: 3}
@@ -8788,6 +9033,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5
@@ -8870,7 +9119,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0f5896620455b4671b10deb40ef94256,
         type: 3}
       propertyPath: m_Name
-      value: M_01
+      value: L
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 0f5896620455b4671b10deb40ef94256,
         type: 3}
@@ -8914,6 +9163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sittingLCrossedController: {fileID: 9100000, guid: e4df16b73e9bb1b42a82a2d99cf385ef,
+    type: 2}
+  sittingRCrossedController: {fileID: 9100000, guid: de962fec2061b914daa61587760c849e,
+    type: 2}
   stageManager: {fileID: 0}
   minLookTime: 2
   maxLookTime: 5

@@ -25,7 +25,7 @@ public class ExitController : MonoBehaviour
     {
         if (presentationStarted && stageManager.GetCurrentStage() == 3)
         {
-            if (Time.time - presentationStartTime >= 60.0f) // 1분 후
+            if (Time.time - presentationStartTime >= 5.0f) // 1분 후
             {
                 StartExitingCharacters();
                 presentationStarted = false; // 더 이상 이동하지 않도록 설정

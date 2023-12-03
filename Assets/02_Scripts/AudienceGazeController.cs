@@ -68,28 +68,59 @@ public class AudienceGazeController : MonoBehaviour
             lookAtPosition = Vector3.Lerp(lookAtPosition, currentTarget.position, Time.deltaTime * transitionSpeed);
         }
         
-        // StageManager의 currentStage가 2단계 또는 3단계일 경우 AnimationController 교체
         if (stageManager.GetCurrentStage() == 2 || stageManager.GetCurrentStage() == 3)
         {
-            ChangeAnimationControllerForNonFocusAudience();
-            foreach (var audiencePair in audienceChangeTimers.ToList())
-            {
-                var audience = audiencePair.Key;
-                var timer = audiencePair.Value;
+            UpdateAnimationControllers();
+        }
+        
+        // Idle 상태에서 손의 위치를 조정
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            AdjustHandPosition();
+        }
+        
+        // NONFOCUS 타입이고 randomChoice가 3이며, 현재 Idle 상태인 경우, 다시 SetRandomTarget() 호출
+        if (audienceType == AudienceType.NONFOCUS && randomChoice == 3 && animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            SetRandomTarget();
+            isPlayingAnimation = false;
+        }
+    }
+    // 손의 위치를 조정하는 함수
+    private void AdjustHandPosition()
+    {
+        Vector3 rightHandIKPosition = animator.GetIKPosition(AvatarIKGoal.RightHand);
+        Vector3 leftHandIKPosition = animator.GetIKPosition(AvatarIKGoal.LeftHand);
 
-                timer -= Time.deltaTime;
-                if (timer <= 0)
-                {
-                    ChangeAudienceAnimationController(audience);
-                    audienceChangeTimers[audience] = Random.Range(10f, 20f); // 다음 변경을 위한 새로운 랜덤 타이머 설정
-                }
-                else
-                {
-                    audienceChangeTimers[audience] = timer;
-                }
+        rightHandIKPosition.y -= 0.05f; // 손 위치를 아래로 조정
+        leftHandIKPosition.y -= 0.05f;  // 손 위치를 아래로 조정
+
+        animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1.0f);
+        animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandIKPosition);
+        
+        animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
+        animator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandIKPosition);
+    }
+    void UpdateAnimationControllers()
+    {
+        foreach (var audiencePair in audienceChangeTimers.ToList())
+        {
+            var audience = audiencePair.Key;
+            var timer = audiencePair.Value;
+
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                ChangeAudienceAnimationController(audience);
+                // 더 큰 범위의 랜덤 타이머 값으로 다시 설정
+                audienceChangeTimers[audience] = Random.Range(15f, 30f);            }
+            else
+            {
+                audienceChangeTimers[audience] = timer;
             }
         }
     }
+    
     private void InitializeAudienceChangeTimers()
     {
         var audiences = FindObjectsOfType<AudienceController>();
@@ -98,7 +129,9 @@ public class AudienceGazeController : MonoBehaviour
         {
             if (audience.audience.audienceType == (global::AudienceType) AudienceType.NONFOCUS)
             {
-                audienceChangeTimers[audience] = Random.Range(10f, 20f); // 각 청중에 대한 초기 랜덤 타이머 설정
+                // 각 청중에 대한 더 큰 범위의 랜덤 타이머 설정
+                audienceChangeTimers[audience] = Random.Range(5f, 25f);
+                
             }
         }
     }
@@ -117,21 +150,7 @@ public class AudienceGazeController : MonoBehaviour
             }
         }
     }
-    private void ChangeAnimationControllerForNonFocusAudience()
-    {
-        AudienceController[] nonFocusAudiences = FindObjectsOfType<AudienceController>()
-            .Where(audience => audience.audience.audienceType == (global::AudienceType) AudienceType.NONFOCUS)
-            .ToArray();
 
-        foreach (var audience in nonFocusAudiences)
-        {
-            if (Random.Range(0, 2) == 0) // 50% 확률로 선택
-            {
-                ChangeAudienceAnimationController(audience);
-            }
-        }
-    }
-    
     private void OnAnimatorIK(int layerIndex)
     {
         if (animator)
@@ -142,18 +161,18 @@ public class AudienceGazeController : MonoBehaviour
                 animator.SetLookAtWeight(1.0f, 0.5f); // 상체 시선의 가중치 조절
                 animator.SetLookAtPosition(player.position);
 
-                // 손의 IK 위치를 현재 위치에서 조금 아래로 조정
-                Vector3 rightHandIKPosition = animator.GetIKPosition(AvatarIKGoal.RightHand);
-                Vector3 leftHandIKPosition = animator.GetIKPosition(AvatarIKGoal.LeftHand);
-
-                rightHandIKPosition.y -= 0.05f;
-                leftHandIKPosition.y -= 0.05f;
-
-                animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1.0f);
-                animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandIKPosition);
-
-                animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
-                animator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandIKPosition);
+                // // 손의 IK 위치를 현재 위치에서 조금 아래로 조정
+                // Vector3 rightHandIKPosition = animator.GetIKPosition(AvatarIKGoal.RightHand);
+                // Vector3 leftHandIKPosition = animator.GetIKPosition(AvatarIKGoal.LeftHand);
+                //
+                // rightHandIKPosition.y -= 0.05f;
+                // leftHandIKPosition.y -= 0.05f;
+                //
+                // animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1.0f);
+                // animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandIKPosition);
+                //
+                // animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
+                // animator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandIKPosition);
             }
             else if (currentTarget)
             {
@@ -225,6 +244,8 @@ public class AudienceGazeController : MonoBehaviour
         lookTimer = Random.Range(minLookTime, maxLookTime);
     }
 
+
+
     void TriggerRandomAnimation(int stage)
     {
         string[] triggers;
@@ -248,7 +269,6 @@ public class AudienceGazeController : MonoBehaviour
     // 애니메이션이 끝나면 다시 상태 설정 모드로 진입
     public void ResetTiredState()
     {
-        animator.CrossFade("Idle", 0.5f);
         isPlayingAnimation = false; // 애니메이션 재생 종료
         SetRandomTarget();
         Debug.Log("피곤상태초기화");

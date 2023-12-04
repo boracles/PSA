@@ -7,127 +7,59 @@ using UnityEngine;
 
 public class ScriptPrompter : MonoBehaviour
 {
+    public TextMeshProUGUI textDisplay; // TextMeshPro UI 객체
+    public TextAsset textFile; // TextAsset 타입의 변수
+    private List<string> textPages; // 텍스트 페이지를 저장할 리스트
+    private int currentPage = 0; // 현재 페이지 인덱스
 
-    public TextMeshProUGUI scriptText;
-    public string scriptFileName;       // 대본 텍스트 파일 이름
-    public float scrollSpeed = 2.0f;    // 텍스트 스크롤 속도 
-
-    private bool isScrolling = false;
-    private Coroutine scrollingCoroutine;
-    private bool isScriptLoaded = false;    // 대본이 로드되었는지 여부
-
-    public GameObject playButton;
-    public GameObject pauseButton;
-
-
-    public void ToggleScript()
+    public void StartTextDisplay()
     {
-        if (!isScriptLoaded)
+        if (textFile != null)
         {
-            LoadScriptFromFile(scriptFileName);
-            isScriptLoaded = true;
-            Debug.Log("대본 로드됨");
+            LoadTextFile(textFile);
         }
-        else
+    }
+
+    void LoadTextFile(TextAsset file)
+    {
+        string text = file.text; // TextAsset의 내용을 가져옵니다.
+        textPages = new List<string>();
+
+        for (int i = 0; i < text.Length; i += 96)
         {
-            ToggleScrolling();
+            if (i + 96 < text.Length)
+                textPages.Add(text.Substring(i, 96));
+            else
+                textPages.Add(text.Substring(i));
         }
+
+        currentPage = 0;
+        if (textPages.Count > 0)
+            textDisplay.text = textPages[currentPage]; // 첫 페이지를 표시합니다.
+    }
+
+    public void ResetTextDisplay()
+    {
+        textDisplay.text = ""; // 텍스트를 지웁니다.
+        currentPage = 0; // 페이지 인덱스를 초기화합니다.
+        textPages.Clear(); // 텍스트 페이지 리스트를 초기화합니다.
     }
     
-    private void ToggleScrolling()
+    public void NextPage()
     {
-        if (isScrolling)
+        if (currentPage < textPages.Count - 1)
         {
-            // 스크롤 중지
-            StopScrolling();
-        }
-        else
-        {
-            // 스크롤 시작
-            StartScrolling();
+            currentPage++;
+            textDisplay.text = textPages[currentPage];
         }
     }
 
-    public void CompleteScript()
+    public void PreviousPage()
     {
-        StopScrolling();
-        isScriptLoaded = false;
-        scriptText.text = ""; // 텍스트 내용 비우기
-        Debug.Log("대본 완료 및 리셋");
-    }
-
-    private void OnDisable()
-    {
-        StopScrolling();
-        isScriptLoaded = false;
-        scriptText.text = ""; // 텍스트 내용 비우기
-        Debug.Log("대본 완료 및 리셋");
-    }
-
-    private void StartScrolling()
-    {
-        if (!isScrolling)
+        if (currentPage > 0)
         {
-            if (scrollingCoroutine != null)
-            {
-                StopCoroutine(scrollingCoroutine);
-                playButton.SetActive(true);
-                pauseButton.SetActive(false);
-                Debug.Log("스크롤 중지");
-            }
-            
-            scrollingCoroutine = StartCoroutine(ScrollText());
-            isScrolling = true;
-            playButton.SetActive(false);
-            pauseButton.SetActive(true);
-            Debug.Log("스크롤 시작");
+            currentPage--;
+            textDisplay.text = textPages[currentPage];
         }
-    }
-
-    private void StopScrolling()
-    {
-        if (scrollingCoroutine != null)
-        {
-            StopCoroutine(scrollingCoroutine);
-            scrollingCoroutine = null;
-            playButton.SetActive(true);
-            pauseButton.SetActive(false);
-            Debug.Log("스크롤 중지");
-        }
-        isScrolling = false;
-    }
-
-    void LoadScriptFromFile(string fileName)
-    {
-        string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
-
-        if (File.Exists(filePath))
-        {
-            string scriptContent = File.ReadAllText(filePath);
-            scriptText.text = scriptContent;
-            StartScrolling();
-        }
-        else
-        {
-            Debug.Log("대본 파일을 찾을 수 없습니다.");
-        }
-    }
-
-    IEnumerator ScrollText()
-    {
-        RectTransform textRectTransform = scriptText.GetComponent<RectTransform>();
-        float scrollDistance = textRectTransform.rect.height*10.0f; // 스크롤할 거리 설정
-
-        Vector2 startPosition = textRectTransform.anchoredPosition;
-        Vector2 endPosition = new Vector2(startPosition.x, startPosition.y + scrollDistance);
-
-        while (textRectTransform.anchoredPosition.y < endPosition.y)
-        {
-            textRectTransform.anchoredPosition += new Vector2(0, scrollSpeed * Time.deltaTime);
-            yield return null;
-        }
-        
-        // 스크롤이 끝나면 스크롤 상태 업데이트
-        isScrolling = false;
     }
 }

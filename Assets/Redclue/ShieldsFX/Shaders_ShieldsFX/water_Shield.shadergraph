@@ -6081,7 +6081,7 @@
     "m_DefaultRefNameVersion": 0,
     "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_56AA3CFD",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_OffsetSize",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",

@@ -14,6 +14,7 @@ public class MeditationController : MonoBehaviour
     private Material childMaterial;
     private ParticleSystem particleSystem;
     private ParticleSystem.ShapeModule shapeModule;
+    private Material particleMaterial;
 
     private void OnEnable()
     {
@@ -25,6 +26,7 @@ public class MeditationController : MonoBehaviour
         childMaterial = meditationCircle.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().material;
         particleSystem = meditationCircle.transform.GetChild(1).GetComponent<ParticleSystem>();
         shapeModule = particleSystem.shape;
+        particleMaterial = meditationCircle.transform.GetChild(1).GetComponent<ParticleSystemRenderer>().material;
     }
     
     public void PlayMeditationVoice()
@@ -79,6 +81,10 @@ public class MeditationController : MonoBehaviour
         // 오디오 볼륨에 따라 ParticleSystem의 Radius 값 조절
         float radius = MapVolumeToRadius(volumeLevel);
         shapeModule.radius = radius;
+        
+        // 오디오 볼륨에 따라 Material의 _OffsetSize 값 조절
+        float offsetSize = MapVolumeToOffsetSize(volumeLevel);
+        particleMaterial.SetFloat("_OffsetSize", offsetSize);
     }
 
     float GetRMS(float[] spectrum)
@@ -95,5 +101,11 @@ public class MeditationController : MonoBehaviour
     float MapVolumeToRadius(float volume)
     {
         return Mathf.Clamp(volume * 50, 0, 4); // 오디오 음량에 따른 radius 값의 범위 조절
+    }
+    
+    float MapVolumeToOffsetSize(float volume)
+    {
+        // 오디오 볼륨을 -0.05에서 0.05 사이의 값으로 변환
+        return Mathf.Clamp(volume - 0.08f, -0.05f, 0.05f);
     }
 }

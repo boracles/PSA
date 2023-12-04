@@ -53,6 +53,7 @@ Material:
     - Vector1_DD2F6A86: 1
     - Vector1_fa25bff042d14acc8601fe2fae2d10b5: 5
     - _FresnelPower: 4
+    - _OffsetSize: 0.008
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:

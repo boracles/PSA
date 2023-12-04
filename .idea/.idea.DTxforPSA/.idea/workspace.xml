@@ -6,11 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="3295420c-4658-47de-8628-053291c9e97a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DTxforPSA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DTxforPSA/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Scenes/3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scenes/3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/AudienceGazeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/AudienceGazeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/06_Animations/Clips/Negative/SittingTiredStayAwake.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06_Animations/Clips/Negative/SittingTiredStayAwake.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/06_Animations/Controllers/Sitting.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06_Animations/Controllers/Sitting.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/06_Animations/Controllers/Typing.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06_Animations/Controllers/Typing.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/MeditationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/MeditationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Packages (Setup)/FinalIK.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Packages (Setup)/Oculus Integration.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Packages (Setup)/OpenXR.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Packages (Setup)/SteamVR.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kamgam/UGUIBlurredBackground/Packages/UGUIBlurredBackgroundHDRP.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kamgam/UGUIBlurredBackground/Packages/UGUIBlurredBackgroundURP.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Le Tai's Asset/TranslucentImage/UniversalRP support.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Redclue/ShieldsFX/Shaders_ShieldsFX/water_Shield.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Redclue/ShieldsFX/Shaders_ShieldsFX/water_Shield.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Redclue/ShieldsFX/_Packages/URP.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ExamplesBuiltin.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ExamplesInc.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ExamplesURP.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ExamplesURP_2023_2_Or_Newer.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ShadersBuiltIn.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ShadersURP.unitypackage.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +30,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/02_Scripts/AudienceReaction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02_Scripts/MeditationController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -80,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1701343016944</updated>
       <workItem from="1701343054050" duration="2915000" />
-      <workItem from="1701543010389" duration="6842000" />
+      <workItem from="1701543010389" duration="7771000" />
     </task>
     <servers />
   </component>

@@ -77,3 +77,22 @@ MonoBehaviour:
   m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
+--- !u!114 &517770848609206030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e2e32e102e44abeb72209e7ce030c3, type: 3}
+  m_Name: BlurURP
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  Settings: {BlurURP: {fileID: 517770848609206030}, blurMaterial: {fileID: 2100000,
+      guid: 73f543af8f25e9947873ec9372514e68, type: 2}, blurPasses: 3, downSample: 2,
+    renderPassEvent: 450, blurType: 0}
+  blurController: {fileID: 0}
+  startSettings: {BlurURP: {fileID: 0}, blurMaterial: {fileID: 0}, blurPasses: 3,
+    downSample: 2, renderPassEvent: 450, blurType: 0}

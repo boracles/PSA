@@ -54,14 +54,16 @@ public class StageManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("씬 번호가 유효한 범위를 벗어났습니다");
-                currentStage = 0;
+                // 이 경우에는 씬 번호가 1, 2, 3이 아니므로 명상 상태로 처리
+                Debug.Log("현재 씬은 명상 단계입니다");
+                HandleMeditationStage();
             }
         }
         else
         {
-            Debug.LogError("씬 이름을 확인해 주세요");
-            currentStage = 0;
+            // 씬 이름이 숫자로 파싱되지 않는 경우에도 명상 상태로 처리
+            Debug.Log("현재 씬은 명상 단계입니다");
+            HandleMeditationStage();
         }
     }
 
@@ -94,4 +96,5 @@ public class StageManager : MonoBehaviour
             member.StartClapping();
         }
     }
+   
 }

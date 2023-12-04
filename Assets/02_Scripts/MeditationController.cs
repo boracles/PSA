@@ -94,6 +94,6 @@ public class MeditationController : MonoBehaviour
 
     float MapVolumeToRadius(float volume)
     {
-        return Mathf.Clamp(volume * 50, 0, 3); // 오디오 음량에 따른 radius 값의 범위 조절
+        return Mathf.Clamp(volume * 50, 0, 4); // 오디오 음량에 따른 radius 값의 범위 조절
     }
 }

@@ -808,7 +808,7 @@ PlayerSettings:
     PS5: 
     QNX: 
     Stadia: 
-    Standalone: 
+    Standalone: UNITY_CCU;CURVEDUI_TMP;CURVEDUI_UNITY_XR;TextMeshPro;UITK_EXISTS;JSONNET_EXISTS
     VisionOS: 
     WebGL: 
     XboxOne: 

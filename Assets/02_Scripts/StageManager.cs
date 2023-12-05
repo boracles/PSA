@@ -74,8 +74,6 @@ public class StageManager : MonoBehaviour
         Debug.Log("명상 단계 시작");
     }
 
-    
-    
     // 현재 단계를 반환하는 함수 
     public int GetCurrentStage()
     {
@@ -95,6 +93,19 @@ public class StageManager : MonoBehaviour
         {
             member.StartClapping();
         }
+    }
+    
+    public void SceneChange()
+    {
+        // 현재 씬 이름 확인
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        // 현재 씬이 "OnBoarding"이면 "Meditation" 씬으로 이동
+        if (currentSceneName == "OnBoarding")
+        {
+            SceneManager.LoadScene("Meditation");
+        }
+        // 다른 씬 이름에 대한 처리도 여기에 추가 가능
     }
    
 }

@@ -5713,10 +5713,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\uC2EC\uD638\uD761\uC744 \uC2DC\uC791\uD569\uB2C8\uB2E4"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 87992fbad5e0f49418073fe4dbc463ce, type: 2}
-  m_sharedMaterial: {fileID: -5290160754177291828, guid: 87992fbad5e0f49418073fe4dbc463ce,
+  m_fontAsset: {fileID: 11400000, guid: 5e3da83e183b67b49ba3b50c28501722, type: 2}
+  m_sharedMaterial: {fileID: 3006352019630965128, guid: 5e3da83e183b67b49ba3b50c28501722,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -13227,6 +13227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitleText: {fileID: 1082951965}
   meditationVoice: {fileID: 2056195243}
+  meditationCircle: {fileID: 0}
+  meditationWave: {fileID: 0}
 --- !u!4 &1681010030
 Transform:
   m_ObjectHideFlags: 0

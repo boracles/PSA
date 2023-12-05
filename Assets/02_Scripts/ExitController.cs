@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExitController : MonoBehaviour
 {
-    public StageManager stageManager;
+    private StageManager stageManager;
     public Transform exitPoint;
     public float speed = 1.0f;
     private float presentationStartTime;
@@ -25,7 +25,7 @@ public class ExitController : MonoBehaviour
     {
         if (presentationStarted && stageManager.GetCurrentStage() == 3)
         {
-            if (Time.time - presentationStartTime >= 5.0f) // 1분 후
+            if (Time.time - presentationStartTime >= 30.0f) // 1분 후
             {
                 StartExitingCharacters();
                 presentationStarted = false; // 더 이상 이동하지 않도록 설정

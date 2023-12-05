@@ -9681,7 +9681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caac8393df698d946a194b62d5dfe32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageManager: {fileID: 0}
   exitPoint: {fileID: 1300767044}
   speed: 2
 --- !u!4 &1188557068

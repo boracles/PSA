@@ -9236,7 +9236,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1921414703}
+      objectReference: {fileID: 1603614423}
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -9265,7 +9265,7 @@ PrefabInstance:
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnPresentationComplete
+      value: CompletePT
       objectReference: {fileID: 0}
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
@@ -9280,7 +9280,7 @@ PrefabInstance:
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: StageManager, Assembly-CSharp
+      value: SceneChageButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7380761033440643623, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
@@ -9405,11 +9405,21 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1227182752}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7380761033440643620, guid: 9b33a0962b32a13448b8017d7892eed8,
+        type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1603614423}
   m_SourcePrefab: {fileID: 100100000, guid: 9b33a0962b32a13448b8017d7892eed8, type: 3}
 --- !u!4 &1060247099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7380761035279303118, guid: 9b33a0962b32a13448b8017d7892eed8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1060247098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1060247100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7380761033440643620, guid: 9b33a0962b32a13448b8017d7892eed8,
     type: 3}
   m_PrefabInstance: {fileID: 1060247098}
   m_PrefabAsset: {fileID: 0}
@@ -10384,7 +10394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caac8393df698d946a194b62d5dfe32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageManager: {fileID: 0}
   exitPoint: {fileID: 1300767044}
   speed: 2
 --- !u!4 &1188557068
@@ -14207,6 +14216,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1060247098}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1603614423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060247100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb6bb91f40fee964e9f24cda9a66490c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneChangeButton: {fileID: 0}
+  completeButton: {fileID: 0}
 --- !u!1001 &1604354958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18111,7 +18134,7 @@ PrefabInstance:
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.027
+      value: 0.236
       objectReference: {fileID: 0}
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}

@@ -15,4 +15,9 @@ public class SceneChageButton : MonoBehaviour
             sceneChangeButton.onClick.AddListener(()=> StageManager.Instance.SceneChange());
         }
     }
+
+    public void CompletePT()
+    {
+        StageManager.Instance.OnPresentationComplete();
+    }
 }

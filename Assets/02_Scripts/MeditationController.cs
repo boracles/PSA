@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MeditationController : MonoBehaviour
 {
     public GameObject meditationCircle;
     public AudioSource meditationVoice;
+    public MeditationSubtitles subtitlesScript;
     public float rotationSpeed = 10.0f;
 
     private bool isRotating = false;
@@ -27,11 +29,28 @@ public class MeditationController : MonoBehaviour
         particleSystem = meditationCircle.transform.GetChild(1).GetComponent<ParticleSystem>();
         shapeModule = particleSystem.shape;
         particleMaterial = meditationCircle.transform.GetChild(1).GetComponent<ParticleSystemRenderer>().material;
+        
+        // 현재 씬의 이름을 가져옴
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        // 씬 이름이 조건에 부합하면 PlayMeditationVoice() 실행
+        if (currentSceneName == "1_Meditation30s" || currentSceneName == "2_Meditation30s" || currentSceneName == "3_Meditation30s")
+        {
+            StartCoroutine(PlayMeditationVoiceAfterDelay(3.0f)); // 3초 후에 실행;
+        }
+    }
+    
+    IEnumerator PlayMeditationVoiceAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // 지정된 시간만큼 대기
+        PlayMeditationVoice();
+        meditationCircle.transform.parent.gameObject.SetActive(true);
     }
     
     public void PlayMeditationVoice()
     {
         meditationVoice.Play();
+        subtitlesScript.StartSubtitles();
         isRotating = true;
     }
 

@@ -43,7 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -178,6 +178,8 @@ MonoBehaviour:
   bgmClips:
   - {fileID: 8300000, guid: 3ce5292fca70eb74ba38216ff8f3e254, type: 3}
   - {fileID: 8300000, guid: 9b16fb8cf1089cf45994d2170024ab4a, type: 3}
+  - {fileID: 8300000, guid: 56cdeddbeb1b29746ae58ce3374ab3f2, type: 3}
+  - {fileID: 8300000, guid: 25c08a9e79c0f6e498dd6eb3ecf2af4d, type: 3}
   voiceSource: {fileID: 5429646657474737755}
   voiceClips:
   - {fileID: 8300000, guid: 78847e9f812e3354ca193dd515a852a6, type: 3}
@@ -198,10 +200,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

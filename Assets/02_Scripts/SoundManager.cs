@@ -48,16 +48,24 @@ public class SoundManager : MonoBehaviour
         else if (scene.name == "1") // 1번 씬에 대한 처리
         {
             StartCoroutine(PlayVoiceClipAndActivateObject(2, 0f, 3f)); // 2번 VoiceClip 재생 후 처리
+            PlayBGM(3);
         }
         else if (scene.name == "2") // 2번 씬에 대한 처리
         {
             StartCoroutine(PlayVoiceClipAndActivateButtonInScene2(4, 9f)); // 4번 VoiceClip 재생 후 처리
+            PlayBGM(3);
         }
         else if (scene.name == "3") // 3번 씬에 대한 처리
         {
             StartCoroutine(PlayVoiceClipAndActivateObjectInScene3(5, 9f)); // 5번 VoiceClip 재생 후 처리
+            PlayBGM(3);
         }
-        
+        else if(scene.name == "1_Meditation30s"||scene.name == "2_Meditation30s"||scene.name == "3_Meditation30s")
+        {
+            PlayBGM(2);
+        }
+
+    }
         IEnumerator PlayVoiceClipAndActivateObjectInScene3(int clipIndex, float delayAfterClipStart)
         {
             PlayVoiceClip(clipIndex); // VoiceClip 재생
@@ -85,7 +93,6 @@ public class SoundManager : MonoBehaviour
                 Debug.LogError("지정된 경로에 오브젝트를 찾을 수 없습니다.");
             }
         }
-    }
     
     IEnumerator PlayVoiceClipAndActivateButtonInScene2(int clipIndex, float delayAfterClipStart)
     {

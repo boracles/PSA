@@ -105,7 +105,22 @@ public class StageManager : MonoBehaviour
         {
             SceneManager.LoadScene("Meditation");
         }
-        // 다른 씬 이름에 대한 처리도 여기에 추가 가능
+        else if (currentSceneName == "1_Meditation30s")
+        {
+            SceneManager.LoadScene("2");
+        }
+        else if (currentSceneName == "2_Meditation30s")
+        {
+            SceneManager.LoadScene("3");
+        }
+        else if (currentSceneName == "3_Meditation30s")
+        {
+            SceneManager.LoadScene("Ending");
+        }
+        else if (currentSceneName == "Meditation")
+        {
+            SceneManager.LoadScene("1");
+        }
     }
    
 }

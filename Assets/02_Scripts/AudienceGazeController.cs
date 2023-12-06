@@ -92,8 +92,8 @@ public class AudienceGazeController : MonoBehaviour
         Vector3 rightHandIKPosition = animator.GetIKPosition(AvatarIKGoal.RightHand);
         Vector3 leftHandIKPosition = animator.GetIKPosition(AvatarIKGoal.LeftHand);
 
-        rightHandIKPosition.y -= 0.05f; // 손 위치를 아래로 조정
-        leftHandIKPosition.y -= 0.05f;  // 손 위치를 아래로 조정
+        rightHandIKPosition.y -= 0.1f; // 손 위치를 아래로 조정
+        leftHandIKPosition.y -= 0.1f;  // 손 위치를 아래로 조정
 
         animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1.0f);
         animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandIKPosition);

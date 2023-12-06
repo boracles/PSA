@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a19d3478546e174ba4693f363a23073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 7055374278343637195}
+  hand: {fileID: 5407218802118561081}
   handProjection: {fileID: 37349759}
   handProjectionVisuals:
   - {fileID: 75598819}
@@ -2408,7 +2408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a19d3478546e174ba4693f363a23073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 2621712130042075521}
+  hand: {fileID: 574814002214687028}
   handProjection: {fileID: 627562257}
   handProjectionVisuals:
   - {fileID: 145923240}
@@ -3408,7 +3408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a19d3478546e174ba4693f363a23073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 7055374278343637195}
+  hand: {fileID: 5407218802118561081}
   handProjection: {fileID: 1108740121}
   handProjectionVisuals:
   - {fileID: 889539545}
@@ -4734,7 +4734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a19d3478546e174ba4693f363a23073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 2621712130042075521}
+  hand: {fileID: 574814002214687028}
   handProjection: {fileID: 1490267507}
   handProjectionVisuals:
   - {fileID: 1776753633}

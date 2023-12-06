@@ -21,8 +21,14 @@ EditorBuildSettings:
     path: Assets/01_Scenes/2.unity
     guid: b772f31c77c26474c96f035d35c8677e
   - enabled: 1
+    path: Assets/01_Scenes/2_Meditation30s.unity
+    guid: 04ba1273ac994724e8c186da42eb6a8b
+  - enabled: 1
     path: Assets/01_Scenes/3.unity
     guid: e59dcda639ccafa4e8cd275a64fc6454
+  - enabled: 1
+    path: Assets/01_Scenes/3_Meditation30s.unity
+    guid: 96426775c26d7ac4c9219bba5fd8a8cb
   - enabled: 1
     path: Assets/01_Scenes/Ending.unity
     guid: cbd18caf0f7d8e248a09827dd59ebf4d

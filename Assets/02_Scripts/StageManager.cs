@@ -125,6 +125,14 @@ public class StageManager : MonoBehaviour
         {
             SceneManager.LoadScene("1_Meditation30s");
         }
+        else if (currentSceneName == "2")
+        {
+            SceneManager.LoadScene("2_Meditation30s");
+        }
+        else if(currentSceneName == "3")
+        {
+            SceneManager.LoadScene("3_Meditation30s");
+        }
     }
    
 }

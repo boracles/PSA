@@ -22,7 +22,9 @@ public class MeditationController : MonoBehaviour
     {
         meditationCircle.transform.parent.gameObject.SetActive(false);
     }
-
+    
+    private float[] spectrum = new float[256];
+    
     void Start()
     {
         childMaterial = meditationCircle.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().material;
@@ -38,6 +40,8 @@ public class MeditationController : MonoBehaviour
         {
             StartCoroutine(PlayMeditationVoiceAfterDelay(3.0f)); // 3초 후에 실행;
         }
+        
+        StartCoroutine(ThrottledRoutine()); // Start the coroutine
     }
     
     IEnumerator PlayMeditationVoiceAfterDelay(float delay)
@@ -60,8 +64,21 @@ public class MeditationController : MonoBehaviour
         {
             RotateMeditationCircle();
             UpdateFresnelPower();
-            UpdateParticleSystemRadius();
+            ThrottledUpdate();
         }
+    }
+    IEnumerator ThrottledRoutine()
+    {
+        while (true)
+        {
+            UpdateParticleSystemRadius();
+            yield return new WaitForSeconds(0.1f); // Update every 0.1 seconds instead of every frame
+        }
+    }
+    
+    void ThrottledUpdate()
+    {
+        meditationVoice.GetSpectrumData(spectrum, 0, FFTWindow.Rectangular);
     }
 
     private void RotateMeditationCircle()
@@ -75,13 +92,22 @@ public class MeditationController : MonoBehaviour
     private void UpdateFresnelPower()
     {
         float fresnelPower;
-        if (currentRotation <= 180)
+
+        if (currentRotation <= 90)
         {
-            fresnelPower = 8 * (1 - currentRotation / 180.0f);
+            fresnelPower = 8 * (1 - currentRotation / 90.0f);
+        }
+        else if (currentRotation <= 180)
+        {
+            fresnelPower = 8 * ((currentRotation - 90) / 90.0f);
+        }
+        else if (currentRotation <= 270)
+        {
+            fresnelPower = 8 * (1 - (currentRotation - 180) / 90.0f);
         }
         else
         {
-            fresnelPower = 8 * ((currentRotation - 180) / 180.0f);
+            fresnelPower = 8 * ((currentRotation - 270) / 90.0f);
         }
 
         if (childMaterial != null)
@@ -119,12 +145,12 @@ public class MeditationController : MonoBehaviour
 
     float MapVolumeToRadius(float volume)
     {
-        return Mathf.Clamp(volume * 50, 0, 4); // 오디오 음량에 따른 radius 값의 범위 조절
+        return Mathf.Clamp(volume * 50, 0, 6); // 오디오 음량에 따른 radius 값의 범위 조절
     }
     
     float MapVolumeToOffsetSize(float volume)
     {
         // 오디오 볼륨을 -0.05에서 0.05 사이의 값으로 변환
-        return Mathf.Clamp(volume - 0.08f, -0.05f, 0.05f);
+        return Mathf.Clamp(volume - 0.06f, -0.06f, 0.06f);
     }
 }

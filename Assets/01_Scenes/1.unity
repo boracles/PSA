@@ -1563,7 +1563,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 2479261110152303918, guid: f5ec7f7ece2d1b54283218dea4d97db4,
+      objectReference: {fileID: -50121925869284551, guid: f5ec7f7ece2d1b54283218dea4d97db4,
         type: 3}
     - target: {fileID: 4961328788131675361, guid: c808236ebf3e1394e864c09295063382,
         type: 3}
@@ -2965,8 +2965,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7882353, g: 0.8862745, b: 0.9137255, a: 1}
-    m_PressedColor: {r: 0.21052866, g: 0.44497877, b: 0.7830189, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.69473684, b: 0, a: 1}
+    m_PressedColor: {r: 0.6627451, g: 0.41568628, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -4786,6 +4786,18 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &434327068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7793469405391380666, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2025998542}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434327062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee01e66702087b4798e633ca34c7956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &435639050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4886,7 +4898,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.7882353, g: 0.8862745, b: 0.9137255, a: 1}
-    m_PressedColor: {r: 0.21052866, g: 0.44497877, b: 0.7830189, a: 1}
+    m_PressedColor: {r: 0.6603774, g: 0.41272342, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -7457,11 +7469,11 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 2025998547}
-  vibrancy: 0.24
-  brightness: -0.01
-  flatten: 0.487
-  m_spriteBlending: 0.69
+  source: {fileID: 434327068}
+  vibrancy: 2.34
+  brightness: -0.9
+  flatten: 0.608
+  m_spriteBlending: 0.9
 --- !u!222 &629637527
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9178,8 +9190,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7882353, g: 0.8862745, b: 0.9137255, a: 1}
-    m_PressedColor: {r: 0.21052866, g: 0.44497877, b: 0.7830189, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.69803923, b: 0, a: 1}
+    m_PressedColor: {r: 0.6627451, g: 0.41568628, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -10790,8 +10802,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7882353, g: 0.8862745, b: 0.9137255, a: 1}
-    m_PressedColor: {r: 0.21052866, g: 0.44497877, b: 0.7830189, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.69803923, b: 0, a: 1}
+    m_PressedColor: {r: 0.6627451, g: 0.41568628, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -11635,7 +11647,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 2025998547}
+  source: {fileID: 0}
   vibrancy: 0.24
   brightness: -0.01
   flatten: 0.487
@@ -16491,7 +16503,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 2025998547}
+  source: {fileID: 0}
   vibrancy: 0.24
   brightness: -0.01
   flatten: 0.487
@@ -18479,7 +18491,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 2025998547}
+  source: {fileID: 0}
   vibrancy: 0.24
   brightness: -0.01
   flatten: 0.487
@@ -18745,8 +18757,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7882353, g: 0.8862745, b: 0.9137255, a: 1}
-    m_PressedColor: {r: 0.21052866, g: 0.44497877, b: 0.7830189, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.69803923, b: 0, a: 1}
+    m_PressedColor: {r: 0.6627451, g: 0.41568628, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -18827,22 +18839,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 2086158619}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2086158619}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
+      - m_Target: {fileID: 2023921061}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19290,7 +19302,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 2025998547}
+  source: {fileID: 0}
   vibrancy: 0.24
   brightness: -0.01
   flatten: 0.487
@@ -24551,7 +24563,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 2025998547}
+  source: {fileID: 0}
   vibrancy: 0.24
   brightness: -0.01
   flatten: 0.487
@@ -24686,6 +24698,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7793469405391380666, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
+        type: 3}
+      propertyPath: downsample
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24703,18 +24720,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1225236232}
   m_SourcePrefab: {fileID: 100100000, guid: 4854c80cf48d01e44bfe786e8cf18e3a, type: 3}
---- !u!114 &2025998547 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5634755313052128012, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2025998542}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434327062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ee01e66702087b4798e633ca34c7956, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2039498707
 GameObject:
   m_ObjectHideFlags: 0
@@ -26017,7 +26022,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 2025998547}
+  source: {fileID: 0}
   vibrancy: 0.24
   brightness: -0.01
   flatten: 0.487

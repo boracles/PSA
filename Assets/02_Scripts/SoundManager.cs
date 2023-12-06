@@ -42,6 +42,8 @@ public class SoundManager : MonoBehaviour
         else if (scene.name == "Ending")
         {
             PlayBGM(0);
+            StartCoroutine(ActivateObjectAfterVoiceClip(6, 5.0f)); 
+            
         }
         else if (scene.name == "Meditation")
         {

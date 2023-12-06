@@ -10754,7 +10754,7 @@ GameObject:
   - component: {fileID: 8014348051572790701}
   - component: {fileID: 1992776023468930093}
   - component: {fileID: 1850316810465780144}
-  - component: {fileID: 5634755313052128012}
+  - component: {fileID: 7793469405391380666}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -10852,7 +10852,7 @@ MonoBehaviour:
   fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
   fadeOnStart: 1
   renderQueue: 5000
---- !u!114 &5634755313052128012
+--- !u!114 &7793469405391380666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10867,7 +10867,7 @@ MonoBehaviour:
   maxUpdateRate: Infinity
   preview: 0
   blurAlgorithmSelection: 0
-  blurConfig: {fileID: 11400000, guid: 6b78f50af19994940be7f49765b1a380, type: 2}
+  blurConfig: {fileID: 11400000, guid: 8c992f55b7fe6744e819b561d533dba1, type: 2}
   downsample: 0
   blurRegion:
     serializedVersion: 2

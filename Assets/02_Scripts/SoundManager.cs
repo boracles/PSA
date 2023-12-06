@@ -11,6 +11,9 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource voiceSource;
     public AudioClip[] voiceClips;
+
+    public AudioSource sfxSource;
+    public AudioClip[] sfxClips;
     
     public float crossfadeDuration = 1.0f; // 크로스페이드 지속 시간
     

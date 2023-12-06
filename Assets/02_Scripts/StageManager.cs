@@ -121,6 +121,10 @@ public class StageManager : MonoBehaviour
         {
             SceneManager.LoadScene("1");
         }
+        else if (currentSceneName == "1")
+        {
+            SceneManager.LoadScene("1_Meditation30s");
+        }
     }
    
 }

@@ -6188,7 +6188,7 @@ GameObject:
   - component: {fileID: 1140860909}
   - component: {fileID: 1140860908}
   m_Layer: 0
-  m_Name: wave _out (1)
+  m_Name: Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13227,8 +13227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitleText: {fileID: 1082951965}
   meditationVoice: {fileID: 2056195243}
-  meditationCircle: {fileID: 0}
-  meditationWave: {fileID: 0}
+  meditationCircle: {fileID: 1702649035}
+  meditationWave: {fileID: 1140860906}
 --- !u!4 &1681010030
 Transform:
   m_ObjectHideFlags: 0
@@ -13401,6 +13401,12 @@ GameObject:
 --- !u!4 &1702649034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1842758865310826143, guid: eb90c5c9a9c3a0b45b9bef5483ec506e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1702649032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1702649035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1842758864464317253, guid: eb90c5c9a9c3a0b45b9bef5483ec506e,
     type: 3}
   m_PrefabInstance: {fileID: 1702649032}
   m_PrefabAsset: {fileID: 0}

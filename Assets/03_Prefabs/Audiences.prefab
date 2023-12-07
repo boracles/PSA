@@ -188,6 +188,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &8292885513560726790
 MonoBehaviour:
@@ -519,6 +521,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &401168846340737327
 MonoBehaviour:
@@ -751,6 +755,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &1428017960996611787
 MonoBehaviour:
@@ -993,6 +999,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &7061813137317647286
 MonoBehaviour:
@@ -1304,6 +1312,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &5520396757033094609
 MonoBehaviour:
@@ -1541,6 +1551,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &4601950071437595017
 MonoBehaviour:
@@ -1845,6 +1857,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &4406048311157992694
 MonoBehaviour:
@@ -2077,6 +2091,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &4845863692285482186
 MonoBehaviour:
@@ -2309,6 +2325,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &8462311983820430041
 MonoBehaviour:
@@ -2546,6 +2564,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &1742114488247601522
 MonoBehaviour:
@@ -2782,6 +2802,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &5292590550214719076
 MonoBehaviour:
@@ -3025,6 +3047,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &2122576779698331755
 MonoBehaviour:
@@ -3256,6 +3280,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &2092194958592758491
 MonoBehaviour:
@@ -3498,6 +3524,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &4135018528793198562
 MonoBehaviour:
@@ -3736,6 +3764,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &5375894143233721555
 MonoBehaviour:
@@ -3973,6 +4003,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &6033868742214745732
 MonoBehaviour:
@@ -4205,6 +4237,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &8020257785283378429
 MonoBehaviour:
@@ -4431,6 +4465,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &2866174869893576881
 MonoBehaviour:
@@ -4564,7 +4600,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 02cef7f4449084ff19e1ffcdd43ddcf6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.307
+      value: 1.254
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02cef7f4449084ff19e1ffcdd43ddcf6,
         type: 3}
@@ -4663,6 +4699,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &3017787032093745820
 MonoBehaviour:
@@ -4796,7 +4834,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dd660430ea4724c66986d4a4f0f45d19,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.26
+      value: 1.241
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dd660430ea4724c66986d4a4f0f45d19,
         type: 3}
@@ -4895,6 +4933,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &704142743973110590
 MonoBehaviour:
@@ -5138,6 +5178,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &4293177250866039910
 MonoBehaviour:
@@ -5370,6 +5412,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &6613481724781386268
 MonoBehaviour:
@@ -5602,6 +5646,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &5414098931476756064
 MonoBehaviour:
@@ -5833,6 +5879,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &2720479778942508382
 MonoBehaviour:
@@ -6065,6 +6113,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &5297255569365774291
 MonoBehaviour:
@@ -6301,6 +6351,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &8790930852279403314
 MonoBehaviour:
@@ -6508,7 +6560,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 73e40d0b399d5478da4c24b96551e9e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.982
+      value: 0.952
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73e40d0b399d5478da4c24b96551e9e4,
         type: 3}
@@ -6607,6 +6659,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &7229556564679786824
 MonoBehaviour:
@@ -6845,6 +6899,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &4453104485114012528
 MonoBehaviour:
@@ -7075,6 +7131,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &4112939055349155615
 MonoBehaviour:
@@ -7312,6 +7370,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &873938060673033694
 MonoBehaviour:
@@ -7555,6 +7615,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &1702103290345886208
 MonoBehaviour:
@@ -7792,6 +7854,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &5869324375926825465
 MonoBehaviour:
@@ -8018,6 +8082,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &3556425706426067163
 MonoBehaviour:
@@ -8250,6 +8316,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &3807853548387018399
 MonoBehaviour:
@@ -8482,6 +8550,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &7378636387097100726
 MonoBehaviour:
@@ -8714,6 +8784,8 @@ MonoBehaviour:
   randomChoice: 1
   minAnimationSpeed: 0.75
   maxAnimationSpeed: 1.25
+  minScratchTime: 5
+  maxScratchTime: 10
   audienceType: 0
 --- !u!114 &196598878526400259
 MonoBehaviour:

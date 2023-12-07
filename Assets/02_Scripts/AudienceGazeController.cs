@@ -27,9 +27,9 @@ public class AudienceGazeController : MonoBehaviour
     public float maxAnimationSpeed = 1.25f; // 최대 애니메이션 속도
     
     private float scratchTimer; // 각 청중마다 개별적인 타이머
-    public float minScratchTime = 5.0f; // 애니메이션 트리거 최소 시간
-    public float maxScratchTime = 10.0f; // 애니메이션 트리거 최대 시간
-    private string[] scratchTriggers = new string[] {"ScratchCrotch", "ScratchGut", "ScratchLegLeft", "ScratchLegRight", "ScratchNeck", "ScratchNose"};
+    private float minScratchTime = 30.0f; // 애니메이션 트리거 최소 시간
+    private float maxScratchTime = 180.0f; // 애니메이션 트리거 최대 시간
+    private string[] scratchTriggers = new string[] {"ScratchGut", "ScratchNeck", "ScratchNose", "ScratchArm"};
 
     public enum AudienceType {FOCUS, NONFOCUS}
     public AudienceType audienceType;
@@ -57,6 +57,7 @@ public class AudienceGazeController : MonoBehaviour
         lookTimer = Random.Range(minLookTime, maxLookTime);
         
         InitializeAudienceChangeTimers();
+        
         ResetScratchTimer();
     }
 
@@ -69,6 +70,17 @@ public class AudienceGazeController : MonoBehaviour
             if (lookTimer <= 0)
             {
                 SetRandomTarget();
+            }
+            // FOCUS 타입 청중이고, case 0, 1, 2 중 하나인 경우
+            if (audienceType == AudienceType.FOCUS && (randomChoice == 0)||randomChoice is 1 or 2)
+            {
+                scratchTimer -= Time.deltaTime;
+
+                if (scratchTimer <= 0)
+                {
+                    TriggerRandomScratchAnimation();
+                    ResetScratchTimer();
+                }
             }
         }
         
@@ -89,22 +101,12 @@ public class AudienceGazeController : MonoBehaviour
             isPlayingAnimation = false;
         }
         
-        // FOCUS 타입 청중이고, case 0, 1, 2 중 하나인 경우
-        if (audienceType == AudienceType.FOCUS && (randomChoice == 0 || randomChoice == 1 || randomChoice == 2))
-        {
-            scratchTimer -= Time.deltaTime;
-
-            if (scratchTimer <= 0)
-            {
-                TriggerRandomScratchAnimation();
-                ResetScratchTimer();
-            }
-        }
     }
     
     private void TriggerRandomScratchAnimation()
     {
         string selectedTrigger = scratchTriggers[Random.Range(0, scratchTriggers.Length)];
+        AdjustAnimationSpeed();
         animator.SetTrigger(selectedTrigger);
     }
     
@@ -306,25 +308,37 @@ public class AudienceGazeController : MonoBehaviour
 
     public void PlayTypingSound()
     {
-        SoundManager.Instance.sfxSource = gameObject.GetComponent<AudioSource>();
-        SoundManager.Instance.sfxSource.clip = SoundManager.Instance.sfxClips[3];
-        SoundManager.Instance.sfxSource.Play();
+        gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[3];
+        gameObject.GetComponent<AudioSource>().volume = 0.2f;
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void StopTypingSound()
     {
-        SoundManager.Instance.sfxSource.Stop();
+        gameObject.GetComponent<AudioSource>().Stop();
     }
 
     public void PlayIdleSound()
     {
-        SoundManager.Instance.sfxSource = gameObject.GetComponent<AudioSource>();
-        SoundManager.Instance.sfxSource.clip = SoundManager.Instance.sfxClips[4];
-        SoundManager.Instance.sfxSource.Play();
+        gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[4];
+        gameObject.GetComponent<AudioSource>().volume = 0.5f;
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void StopIdleSound()
     {
-        SoundManager.Instance.sfxSource.Stop();
+        gameObject.GetComponent<AudioSource>().Stop();
+    }
+
+    public void PlayScratchSound()
+    {
+        gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[5];
+        gameObject.GetComponent<AudioSource>().volume = 0.5f;
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
+    public void StopScratchSound()
+    {
+        gameObject.GetComponent<AudioSource>().Stop();
     }
 }

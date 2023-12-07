@@ -383,4 +383,25 @@ public class AudienceGazeController : MonoBehaviour
     {
         gameObject.GetComponent<AudioSource>().Stop();
     }
+
+    public void YawningSound()
+    {
+        gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[10];
+        gameObject.GetComponent<AudioSource>().volume = 0.2f;
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
+    public void StandUpSound()
+    {
+        gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[11];
+        gameObject.GetComponent<AudioSource>().volume = 0.5f;
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
+    public void Footstep()
+    {
+        gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[12];
+        gameObject.GetComponent<AudioSource>().volume = 0.1f;
+        gameObject.GetComponent<AudioSource>().Play();
+    }
 }

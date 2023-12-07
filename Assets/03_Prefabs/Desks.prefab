@@ -873,6 +873,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Desk (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3961661108740789366, guid: c449f907f155d5b4b9493e501fe62781,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

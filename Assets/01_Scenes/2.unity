@@ -8780,7 +8780,7 @@ GameObject:
   - component: {fileID: 1423901528}
   - component: {fileID: 1423901530}
   m_Layer: 5
-  m_Name: Frame_4
+  m_Name: Frame_Difficulties
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10745,10 +10745,10 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 0}
-  vibrancy: 0.24
-  brightness: -0.01
-  flatten: 0.487
+  source: {fileID: 2025998543}
+  vibrancy: 2.34
+  brightness: -0.9
+  flatten: 0.608
   m_spriteBlending: 0.69
 --- !u!222 &1585036060
 CanvasRenderer:
@@ -11363,16 +11363,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Audiences
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465892608286321209, guid: 6497f1923241e1d4b83ffb87a54fa77b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.213
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465892608286321209, guid: 6497f1923241e1d4b83ffb87a54fa77b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 12.924
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14168,10 +14158,10 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 0}
-  vibrancy: 0.24
-  brightness: -0.01
-  flatten: 0.487
+  source: {fileID: 2025998543}
+  vibrancy: 2.34
+  brightness: -0.9
+  flatten: 0.608
   m_spriteBlending: 0.65
 --- !u!222 &2117258301
 CanvasRenderer:
@@ -14532,7 +14522,7 @@ Transform:
   m_GameObject: {fileID: 967237385877443479}
   serializedVersion: 2
   m_LocalRotation: {x: 0.63073957, y: -0.3196368, z: 0.3196368, w: 0.63073957}
-  m_LocalPosition: {x: -2.319, y: -0.024, z: 1.516}
+  m_LocalPosition: {x: -2.353, y: -0.024, z: 1.514}
   m_LocalScale: {x: 0.042024855, y: 0.042024873, z: 0.042024996}
   m_ConstrainProportionsScale: 0
   m_Children:

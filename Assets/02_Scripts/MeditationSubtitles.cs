@@ -83,12 +83,12 @@ public class MeditationSubtitles : MonoBehaviour
             subtitleText.text = "둘";
             number.text = "2";
         }
-        else if (currentTime < 13f)
+        else if (currentTime < 16f)
         {
             subtitleText.text = "셋";
             number.text = "3";
         }
-        else if (currentTime < 16f)
+        else if (currentTime < 17f)
         {
             subtitleText.text = "넷";
             number.text = "4";
@@ -109,7 +109,7 @@ public class MeditationSubtitles : MonoBehaviour
             subtitleText.text = "둘";
             number.text = "2";
         }
-        else if (currentTime < 24f)
+        else if (currentTime < 25f)
         {
             subtitleText.text = "셋";
             number.text = "3";
@@ -133,28 +133,28 @@ public class MeditationSubtitles : MonoBehaviour
                 curve.AddKey(1.0f, 1.0f); // 시간 1에서의 크기
 
                 sizeOverLifeTime.size = new ParticleSystem.MinMaxCurve(1.0f, curve);
-            }
-            else if (currentTime < 29f)
+        }
+        else if (currentTime < 29f)
         {
             subtitleText.text = "하나";
             number.text = "1";
         }
-        else if (currentTime < 30f)
+        else if (currentTime < 31f)
         {
                 subtitleText.text = "둘";
                 number.text = "2";
         }
-        else if (currentTime < 31f)
+        else if (currentTime < 32f)
         {
                 subtitleText.text = "셋";
                 number.text = "3";
         }
-        else if (currentTime < 32f)
+        else if (currentTime < 34f)
         {
                 subtitleText.text = "넷";
                 number.text = "4";
         }
-        else if (currentTime < 33f)
+        else if (currentTime < 35f)
         {
                 subtitleText.text = "다섯";
                 number.text = "5";

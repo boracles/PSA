@@ -75,7 +75,8 @@ public class SoundManager : MonoBehaviour
             voiceSource.loop = false;
             voiceSource.volume = 1.0f;
             PlayVoiceClip(clipIndex); // VoiceClip 재생
-            yield return new WaitForSeconds(delayAfterClipStart); // 9초 대기
+            
+            yield return new WaitForSeconds(7.0f);
 
             // "UI/Canvas/Frame/Button" 오브젝트 찾기 및 활성화
             GameObject buttonObject = GameObject.Find("UI/Canvas/Frame/Button");

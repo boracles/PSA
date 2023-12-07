@@ -12,7 +12,8 @@ public class Timer : MonoBehaviour
     private bool isFlashing = false;
     private float startTime; // 타이머 시작 시간
     private TextMeshProUGUI ptTimeText;
-    
+    private bool timerExpired = false; // 타이머가 만료되었는지 여부를 나타내는 플래그
+
     void Start()
     {
         timeRemaining = initialTime; // 초기 시간으로 설정
@@ -28,51 +29,52 @@ public class Timer : MonoBehaviour
         startTime = Time.time; // 타이머 시작 시간 기록
         isFlashing = false; // 깜빡임 초기화
         timerText.color = Color.white; // 글자색 초기화
+        timerExpired = false; // 타이머 만료 상태 초기화
     }
 
     public void ResetTimer()
     {
-        isTimerRunning = false; // 타이머를 정지합니다.
-        float elapsedTime = Time.time - startTime; // 총 소요시간 계산
-        
-        // 분과 초로 변환
-        int minutes = Mathf.FloorToInt(elapsedTime / 60);
-        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+        isTimerRunning = false;
+        timerExpired = false;
+        isFlashing = false;
+        timerText.enabled = true;
+        timerText.color = Color.white;
 
-        ptTimeText.text = string.Format("발표 소요시간: {0:00}분 {1:00}초", minutes, seconds);
-        
+        float totalElapsedTime = Time.time - startTime;
+        int totalMinutes = Mathf.FloorToInt(totalElapsedTime / 60);
+        int totalSeconds = Mathf.FloorToInt(totalElapsedTime % 60);
+
+        ptTimeText.text = string.Format("발표 소요시간: {0:00}분 {1:00}초", totalMinutes, totalSeconds);
+
         timeRemaining = initialTime; // 시간을 초기 값으로 설정합니다.
-        timerText.color = Color.white; // 글자색 초기화
-        DisplayTime(timeRemaining); // 타이머 표시를 업데이트합니다.
+        DisplayTime(timeRemaining);
     }
     
     void Update()
     {
         if (isTimerRunning)
         {
-            if (timeRemaining > 0)
+            timeRemaining -= Time.deltaTime;
+
+            if (timeRemaining <= 0 && !timerExpired)
             {
-                timeRemaining -= Time.deltaTime;
-                DisplayTime(timeRemaining);
-                if (timeRemaining <= 10.0f && !isFlashing)
-                {
-                    // 10초 남았을 때 깜빡임 시작
-                    isFlashing = true;
-                    StartCoroutine(FlashTimerText());
-                }
-            }
-            else
-            {
+                timerExpired = true;
                 Debug.Log("시간이 다 됐습니다.");
                 PlaySoundSequence();
-                ResetTimer();
             }
+
+            if (timeRemaining <= 10.0f && !isFlashing)
+            {
+                // 10초 남았을 때 또는 타이머가 0에 도달했을 때 깜빡임 시작
+                isFlashing = true;
+                StartCoroutine(FlashTimerText());
+            }
+
+            DisplayTime(timeRemaining);
         }
     }
     IEnumerator FlashTimerText()
     {
-        timerText.color = Color.red; // 글자색을 빨간색으로 변경
-
         while (isFlashing)
         {
             timerText.enabled = !timerText.enabled; // 텍스트 활성화/비활성화 전환
@@ -82,7 +84,19 @@ public class Timer : MonoBehaviour
     
     void DisplayTime(float timeToDisplay)
     {
-        timeToDisplay += 1;
+        if (timeToDisplay < 0)
+        {
+            timeToDisplay *= -1; // 음수일 경우 양수로 변환
+            timerText.color = Color.red; // 글자색을 빨간색으로 변경
+        }
+        else if (timeToDisplay <= 10.0f)
+        {
+            timerText.color = Color.red; // 10초 이하일 때 빨간색으로 변경
+        }
+        else
+        {
+            timerText.color = Color.white; // 그 외에는 흰색으로 유지
+        }
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);

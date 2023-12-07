@@ -63,7 +63,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
+      - time: 0.98610085
         functionName: ResetTiredState
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4,
@@ -71,8 +71,16 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.96828914
-        functionName: ResetTiredState
+      - time: 0
+        functionName: YawningSound
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.964539
+        functionName: StopChatSound
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4,
           type: 3}

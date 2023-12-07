@@ -41,7 +41,7 @@ public class MeditationController : MonoBehaviour
             StartCoroutine(PlayMeditationVoiceAfterDelay(3.0f)); // 3초 후에 실행;
         }
         
-        StartCoroutine(ThrottledRoutine()); // Start the coroutine
+        StartCoroutine(ThrottledRoutine());
     }
     
     IEnumerator PlayMeditationVoiceAfterDelay(float delay)
@@ -53,6 +53,23 @@ public class MeditationController : MonoBehaviour
     
     public void PlayMeditationVoice()
     {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        // 3분 명상 씬인 경우 Text_MinutesInfo를 먼저 비활성화
+        if (currentSceneName == "Meditation")
+        {
+            Invoke(nameof(PlayMeditationVoiceinMeditation), 3.0f);
+        }
+        else
+        {
+            meditationVoice.Play();
+            subtitlesScript.StartSubtitles();
+            isRotating = true;
+        }
+    }
+
+    void PlayMeditationVoiceinMeditation()
+    {
+        GameObject.Find("UI/Canvas/Text_MinutesInfo").SetActive(false);
         meditationVoice.Play();
         subtitlesScript.StartSubtitles();
         isRotating = true;

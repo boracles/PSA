@@ -204,6 +204,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8777b6739e58574498534535aa5591b9, type: 3}
   - {fileID: 8300000, guid: 9f5bca992265f454ca36570855ce6045, type: 3}
   - {fileID: 8300000, guid: bbcf67ff11662044db738bbb72013ba5, type: 3}
+  - {fileID: 8300000, guid: abc12cd5eb023004c977c33d70920adc, type: 3}
+  - {fileID: 8300000, guid: 4fa3a523de81e154c823dabd9cbf5544, type: 3}
+  - {fileID: 8300000, guid: d5f6cba133594b24f900571081e90294, type: 3}
   crossfadeDuration: 1
 --- !u!82 &8180081768642078949
 AudioSource:

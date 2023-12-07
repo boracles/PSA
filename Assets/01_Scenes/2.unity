@@ -5820,16 +5820,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uBC1C\uD45C \uC644\uB8CC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e3da83e183b67b49ba3b50c28501722, type: 2}
-  m_sharedMaterial: {fileID: 3006352019630965128, guid: 5e3da83e183b67b49ba3b50c28501722,
+  m_fontAsset: {fileID: 11400000, guid: 13fde9a5d69f3f043be813291cf01af0, type: 2}
+  m_sharedMaterial: {fileID: 3164861266385400896, guid: 13fde9a5d69f3f043be813291cf01af0,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4283433114
+  m_fontColor: {r: 0.6039216, g: 0, b: 0.3137255, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5852,7 +5852,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -7124,7 +7124,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d3b20ac781b9c424cbb18365a47daacc, type: 2}
+      objectReference: {fileID: 2100000, guid: 565a9a1003c97234f82a7832d8470f07, type: 2}
     - target: {fileID: 7380761035279303104, guid: 9b33a0962b32a13448b8017d7892eed8,
         type: 3}
       propertyPath: m_Radius
@@ -10305,7 +10305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 59d8df7fbed03884cafb2f98dd24c75e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a228a6bdf5d5114eac94aee0efd17b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11363,6 +11363,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Audiences
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465892608286321209, guid: 6497f1923241e1d4b83ffb87a54fa77b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.213
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465892608286321209, guid: 6497f1923241e1d4b83ffb87a54fa77b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.924
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

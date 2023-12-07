@@ -58,21 +58,22 @@ public class SoundManager : MonoBehaviour
         else if (scene.name == "2") // 2번 씬에 대한 처리
         {
             StartCoroutine(PlayVoiceClipAndActivateButtonInScene2(4, 9f)); // 4번 VoiceClip 재생 후 처리
-            PlayBGM(3);
+            PlayBGM(4);
         }
         else if (scene.name == "3") // 3번 씬에 대한 처리
         {
             StartCoroutine(PlayVoiceClipAndActivateObjectInScene3(5, 9f)); // 5번 VoiceClip 재생 후 처리
-            PlayBGM(3);
+            PlayBGM(5);
         }
         else if(scene.name == "1_Meditation30s"||scene.name == "2_Meditation30s"||scene.name == "3_Meditation30s")
         {
             PlayBGM(2);
         }
-
     }
         IEnumerator PlayVoiceClipAndActivateObjectInScene3(int clipIndex, float delayAfterClipStart)
         {
+            voiceSource.loop = false;
+            voiceSource.volume = 1.0f;
             PlayVoiceClip(clipIndex); // VoiceClip 재생
             yield return new WaitForSeconds(delayAfterClipStart); // 9초 대기
 
@@ -101,6 +102,8 @@ public class SoundManager : MonoBehaviour
     
     IEnumerator PlayVoiceClipAndActivateButtonInScene2(int clipIndex, float delayAfterClipStart)
     {
+        voiceSource.loop = false;
+        voiceSource.volume = 1.0f;
         PlayVoiceClip(clipIndex); // VoiceClip 재생
         yield return new WaitForSeconds(delayAfterClipStart); // 9초 대기
 
@@ -129,6 +132,8 @@ public class SoundManager : MonoBehaviour
     
     IEnumerator PlayVoiceClipAndActivateObject(int clipIndex, float delayBeforeClip, float delayAfterClipStart)
     {
+        voiceSource.loop = false;
+        voiceSource.volume = 1.0f;
         yield return new WaitForSeconds(delayBeforeClip);
         PlayVoiceClip(clipIndex);
 
@@ -171,11 +176,13 @@ public class SoundManager : MonoBehaviour
     IEnumerator CrossfadeBGM(AudioClip newClip)
     {
         float timeElapsed = 0;
-
+        float startVolume = (SceneManager.GetActiveScene().name == "3") ? 0.1f : 0.2f; // 씬이 "3"이면 시작 볼륨을 0.1f로 설정
+        float endVolume = (SceneManager.GetActiveScene().name == "3") ? 0.1f : 0.2f; // 씬이 "3"이면 종료 볼륨을 0.1f로 설정
+        
         // 현재 재생 중인 BGM 볼륨을 점차 줄임
         while (timeElapsed < crossfadeDuration)
         {
-            bgmSource.volume = Mathf.Lerp(1.0f, 0.0f, timeElapsed / crossfadeDuration);
+            bgmSource.volume = Mathf.Lerp(startVolume, 0.0f, timeElapsed / crossfadeDuration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
@@ -187,7 +194,7 @@ public class SoundManager : MonoBehaviour
         timeElapsed = 0;
         while (timeElapsed < crossfadeDuration)
         {
-            bgmSource.volume = Mathf.Lerp(0.0f, 1.0f, timeElapsed / crossfadeDuration);
+            bgmSource.volume = Mathf.Lerp(0.0f, endVolume, timeElapsed / crossfadeDuration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }

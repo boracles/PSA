@@ -62,6 +62,22 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0
+        functionName: PlayChatSound
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9609117
+        functionName: StopChatSound
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.9773196
         functionName: ResetTiredState
         data: 

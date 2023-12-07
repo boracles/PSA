@@ -181,6 +181,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9b16fb8cf1089cf45994d2170024ab4a, type: 3}
   - {fileID: 8300000, guid: 56cdeddbeb1b29746ae58ce3374ab3f2, type: 3}
   - {fileID: 8300000, guid: 25c08a9e79c0f6e498dd6eb3ecf2af4d, type: 3}
+  - {fileID: 8300000, guid: e79ae8b8dafe5c94681ccadd2113b69f, type: 3}
+  - {fileID: 8300000, guid: afbb097519c40d74db21e2ce40d92743, type: 3}
   voiceSource: {fileID: 5429646657474737755}
   voiceClips:
   - {fileID: 8300000, guid: 78847e9f812e3354ca193dd515a852a6, type: 3}
@@ -198,6 +200,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ddb977804dfd7bd42b351dfa97b3f147, type: 3}
   - {fileID: 8300000, guid: 5ee66826754bf6e448214ba715b6c3c4, type: 3}
   - {fileID: 8300000, guid: de0ec351a75be554c9f5f998d20e1811, type: 3}
+  - {fileID: 8300000, guid: 4ce84fece3d3c214a8a038bdee265d05, type: 3}
+  - {fileID: 8300000, guid: 8777b6739e58574498534535aa5591b9, type: 3}
+  - {fileID: 8300000, guid: 9f5bca992265f454ca36570855ce6045, type: 3}
+  - {fileID: 8300000, guid: bbcf67ff11662044db738bbb72013ba5, type: 3}
   crossfadeDuration: 1
 --- !u!82 &8180081768642078949
 AudioSource:

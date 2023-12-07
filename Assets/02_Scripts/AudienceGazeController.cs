@@ -29,7 +29,7 @@ public class AudienceGazeController : MonoBehaviour
     private float scratchTimer; // 각 청중마다 개별적인 타이머
     private float minScratchTime = 30.0f; // 애니메이션 트리거 최소 시간
     private float maxScratchTime = 180.0f; // 애니메이션 트리거 최대 시간
-    private string[] scratchTriggers = new string[] {"ScratchGut", "ScratchNeck", "ScratchNose", "ScratchArm"};
+    private string[] scratchTriggers = new string[] {"ScratchGut", "ScratchNeck", "ScratchNose", "ScratchArm", "ScratchLegLeft", "ScratchLegRight", "ScratchCrotch"};
 
     public enum AudienceType {FOCUS, NONFOCUS}
     public AudienceType audienceType;
@@ -37,7 +37,8 @@ public class AudienceGazeController : MonoBehaviour
 
     private Dictionary<AudienceController, float> audienceChangeTimers = new Dictionary<AudienceController, float>();
 
-    void Start()
+    
+    private void Start()
     {
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
@@ -50,7 +51,7 @@ public class AudienceGazeController : MonoBehaviour
             gameObject.tag = "LaptopOwner";
         }
 
-        audienceType = (AudienceType) GetComponent<AudienceController>().audience.audienceType;
+        audienceType = (AudienceType) gameObject.GetComponent<AudienceController>().GetAudience().audienceType;        
         
         // 초기 시선 대상을 플레이어로 설정하고 타이머 재설정
         currentTarget = player;
@@ -61,7 +62,13 @@ public class AudienceGazeController : MonoBehaviour
         ResetScratchTimer();
     }
 
-    void Update()
+    public void SetType()
+    {
+        audienceType = (AudienceType) gameObject.GetComponent<AudienceController>().GetAudience().audienceType;        
+
+    }
+
+    private void Update()
     {
         if (!isPlayingAnimation)
         {
@@ -93,14 +100,6 @@ public class AudienceGazeController : MonoBehaviour
         {
             UpdateAnimationControllers();
         }
-
-        // NONFOCUS 타입이고 randomChoice가 3이며, 현재 Idle 상태인 경우, 다시 SetRandomTarget() 호출
-        if (audienceType == AudienceType.NONFOCUS && randomChoice == 3 && animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        {
-            SetRandomTarget();
-            isPlayingAnimation = false;
-        }
-        
     }
     
     private void TriggerRandomScratchAnimation()
@@ -115,7 +114,7 @@ public class AudienceGazeController : MonoBehaviour
         scratchTimer = Random.Range(minScratchTime, maxScratchTime);
     }
 
-    void UpdateAnimationControllers()
+    private void UpdateAnimationControllers()
     {
         foreach (var audiencePair in audienceChangeTimers.ToList())
         {
@@ -195,7 +194,7 @@ public class AudienceGazeController : MonoBehaviour
         }
     }
 
-    void SetRandomTarget()
+    private void SetRandomTarget()
     {
         int maxRange;
         
@@ -220,8 +219,6 @@ public class AudienceGazeController : MonoBehaviour
             }
         }
 
-        AdjustAnimationSpeed(); // 애니메이션 속도 조절
-
         switch (randomChoice)
         {
             case 0:
@@ -243,17 +240,21 @@ public class AudienceGazeController : MonoBehaviour
                 }
                 break;
             case 3:
-                // NONFOCUS 타입일 경우, 시선 고정 해제 및 애니메이션 실행
                 if (audienceType == AudienceType.NONFOCUS)
                 {
-                    TriggerRandomAnimation(stageManager.GetCurrentStage());
                     currentTarget = null;
-                    isPlayingAnimation = true; // 애니메이션 재생 시작
+                    TriggerRandomAnimation(stageManager.GetCurrentStage());
+                    isPlayingAnimation = true;
+                    return;
                 }
                 break;
         }
+        
+        if (currentTarget != null)
+        {
+            AdjustAnimationSpeed();
+        }
 
-        // 무작위로 대상과 시간을 선택 
         lookTimer = Random.Range(minLookTime, maxLookTime);
     }
 
@@ -267,7 +268,11 @@ public class AudienceGazeController : MonoBehaviour
         }
         else if (stage == 3)
         {
-            triggers = new string[] {"TiredStayAwake", "LookingAround", "Stretching", "Sneezing", "Chatting"};
+            triggers = new string[] {"TiredStayAwake", "LookingAround", "Stretching", "Chatting"};
+            if (Random.Range(0, 10) < 2) // 20%의 확률로 "Sneezing" 선택
+            {
+                triggers = triggers.Concat(new string[] {"Sneezing"}).ToArray();
+            }
         }
         else
         {
@@ -288,8 +293,6 @@ public class AudienceGazeController : MonoBehaviour
         Debug.Log("피곤상태초기화");
 
         AdjustAnimationSpeed(); // 애니메이션 속도 조절
-
-        currentTarget = player;
     }
     
     // 발표 완료 시 박수치기
@@ -338,6 +341,45 @@ public class AudienceGazeController : MonoBehaviour
     }
 
     public void StopScratchSound()
+    {
+        gameObject.GetComponent<AudioSource>().Stop();
+    }
+
+    public void PlayShakeSound()
+    {
+        gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[6];
+        gameObject.GetComponent<AudioSource>().volume = 0.5f;
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
+    public void StopShakeSound()
+    {
+        gameObject.GetComponent<AudioSource>().Stop();
+    }
+
+    public void PlaySneezeSound()
+    {
+        System.Random random = new System.Random();
+        int clipIndex = 7 + random.Next(2);
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = SoundManager.Instance.sfxClips[clipIndex];
+        audioSource.volume = 0.1f;
+        audioSource.Play();
+    }
+
+    public void StopSneezeSound()
+    {
+        gameObject.GetComponent<AudioSource>().Stop();
+    }
+
+    public void PlayChatSound()
+    {
+        gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[9];
+        gameObject.GetComponent<AudioSource>().volume = 1.0f;
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
+    public void StopChatSound()
     {
         gameObject.GetComponent<AudioSource>().Stop();
     }

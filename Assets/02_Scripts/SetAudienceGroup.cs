@@ -41,12 +41,12 @@ public class SetAudienceGroup : MonoBehaviour
                 nonFocusCount = 0;
                 break;
             case 2:
-                focusCount = 18;
-                nonFocusCount = 16;
+                focusCount = 19;
+                nonFocusCount = 17;
                 break;
             case 3:
-                focusCount = 6;
-                nonFocusCount = 28;
+                focusCount = 7;
+                nonFocusCount = 29;
                 break;
             default:
                 Debug.Log("명상단계입니다.");
@@ -100,6 +100,7 @@ public class SetAudienceGroup : MonoBehaviour
         foreach (AudienceController audienceController in audienceList)
         {
             audienceController.SetAudience(type);
+            audienceController.GetComponent<AudienceGazeController>().SetType();
         }
     }
 }

@@ -13,9 +13,9 @@ using UnityEngine;
     {
         public AudienceType audienceType;
 
-        public Audience(Audience audiecne)
+        public Audience(Audience audience)
         {
-            audienceType = audiecne.audienceType;
+            audienceType = audience.audienceType;
         }
     }
 

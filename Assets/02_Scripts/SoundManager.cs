@@ -203,6 +203,8 @@ public class SoundManager : MonoBehaviour
     IEnumerator ActivateObjectAfterVoiceClip(int clipIndex, float delayAfterClip)
     {
         yield return new WaitForSeconds(3f); // 씬 로드 후 3초 대기
+        voiceSource.loop = false;
+        voiceSource.volume = 1.0f;
         PlayVoiceClip(clipIndex); // 음성 클립 재생
         
         yield return new WaitForSeconds(delayAfterClip);

@@ -195,10 +195,10 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 2025998545}
-  vibrancy: 0.24
-  brightness: -0.01
-  flatten: 0.487
+  source: {fileID: 2025998543}
+  vibrancy: 2.34
+  brightness: -0.9
+  flatten: 0.608
   m_spriteBlending: 0.548
 --- !u!222 &678051
 CanvasRenderer:
@@ -8152,17 +8152,17 @@ PrefabInstance:
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.148
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.217
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.255
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
@@ -8261,9 +8261,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1225236232}
   m_SourcePrefab: {fileID: 100100000, guid: 4854c80cf48d01e44bfe786e8cf18e3a, type: 3}
---- !u!114 &2025998545 stripped
+--- !u!114 &2025998543 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5634755313052128012, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
+  m_CorrespondingSourceObject: {fileID: 7793469405391380666, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
     type: 3}
   m_PrefabInstance: {fileID: 2025998542}
   m_PrefabAsset: {fileID: 0}

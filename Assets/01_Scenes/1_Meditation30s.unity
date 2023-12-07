@@ -195,7 +195,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 2025998545}
+  source: {fileID: 0}
   vibrancy: 0.24
   brightness: -0.01
   flatten: 0.487
@@ -8152,17 +8152,17 @@ PrefabInstance:
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.148
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.217
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.255
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
@@ -8261,18 +8261,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1225236232}
   m_SourcePrefab: {fileID: 100100000, guid: 4854c80cf48d01e44bfe786e8cf18e3a, type: 3}
---- !u!114 &2025998545 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5634755313052128012, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2025998542}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434327062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ee01e66702087b4798e633ca34c7956, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2056195240
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,11 @@ public class AudienceGazeController : MonoBehaviour
     
     public float minAnimationSpeed = 0.75f; // 최소 애니메이션 속도
     public float maxAnimationSpeed = 1.25f; // 최대 애니메이션 속도
+    
+    private float scratchTimer; // 각 청중마다 개별적인 타이머
+    public float minScratchTime = 5.0f; // 애니메이션 트리거 최소 시간
+    public float maxScratchTime = 10.0f; // 애니메이션 트리거 최대 시간
+    private string[] scratchTriggers = new string[] {"ScratchCrotch", "ScratchGut", "ScratchLegLeft", "ScratchLegRight", "ScratchNeck", "ScratchNose"};
 
     public enum AudienceType {FOCUS, NONFOCUS}
     public AudienceType audienceType;
@@ -52,6 +57,7 @@ public class AudienceGazeController : MonoBehaviour
         lookTimer = Random.Range(minLookTime, maxLookTime);
         
         InitializeAudienceChangeTimers();
+        ResetScratchTimer();
     }
 
     void Update()
@@ -82,6 +88,29 @@ public class AudienceGazeController : MonoBehaviour
             SetRandomTarget();
             isPlayingAnimation = false;
         }
+        
+        // FOCUS 타입 청중이고, case 0, 1, 2 중 하나인 경우
+        if (audienceType == AudienceType.FOCUS && (randomChoice == 0 || randomChoice == 1 || randomChoice == 2))
+        {
+            scratchTimer -= Time.deltaTime;
+
+            if (scratchTimer <= 0)
+            {
+                TriggerRandomScratchAnimation();
+                ResetScratchTimer();
+            }
+        }
+    }
+    
+    private void TriggerRandomScratchAnimation()
+    {
+        string selectedTrigger = scratchTriggers[Random.Range(0, scratchTriggers.Length)];
+        animator.SetTrigger(selectedTrigger);
+    }
+    
+    private void ResetScratchTimer()
+    {
+        scratchTimer = Random.Range(minScratchTime, maxScratchTime);
     }
 
     void UpdateAnimationControllers()

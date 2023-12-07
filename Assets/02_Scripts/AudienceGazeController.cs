@@ -22,6 +22,9 @@ public class AudienceGazeController : MonoBehaviour
     private Vector3 lookAtPosition;
     private bool isPlayingAnimation = false;    // 애니메이션이 재생 중인지 나타내는 플래그
     public int randomChoice = 1;
+    
+    public float minAnimationSpeed = 0.75f; // 최소 애니메이션 속도
+    public float maxAnimationSpeed = 1.25f; // 최대 애니메이션 속도
 
     public enum AudienceType {FOCUS, NONFOCUS}
     public AudienceType audienceType;
@@ -72,13 +75,7 @@ public class AudienceGazeController : MonoBehaviour
         {
             UpdateAnimationControllers();
         }
-        
-        // Idle 상태에서 손의 위치를 조정
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        {
-            AdjustHandPosition();
-        }
-        
+
         // NONFOCUS 타입이고 randomChoice가 3이며, 현재 Idle 상태인 경우, 다시 SetRandomTarget() 호출
         if (audienceType == AudienceType.NONFOCUS && randomChoice == 3 && animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
@@ -86,21 +83,7 @@ public class AudienceGazeController : MonoBehaviour
             isPlayingAnimation = false;
         }
     }
-    // 손의 위치를 조정하는 함수
-    private void AdjustHandPosition()
-    {
-        Vector3 rightHandIKPosition = animator.GetIKPosition(AvatarIKGoal.RightHand);
-        Vector3 leftHandIKPosition = animator.GetIKPosition(AvatarIKGoal.LeftHand);
 
-        rightHandIKPosition.y -= 0.1f; // 손 위치를 아래로 조정
-        leftHandIKPosition.y -= 0.1f;  // 손 위치를 아래로 조정
-
-        animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1.0f);
-        animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandIKPosition);
-        
-        animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
-        animator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandIKPosition);
-    }
     void UpdateAnimationControllers()
     {
         foreach (var audiencePair in audienceChangeTimers.ToList())
@@ -135,6 +118,7 @@ public class AudienceGazeController : MonoBehaviour
             }
         }
     }
+    
     private void ChangeAudienceAnimationController(AudienceController audience)
     {
         if (!audience.CompareTag("LaptopOwner"))
@@ -160,19 +144,6 @@ public class AudienceGazeController : MonoBehaviour
             {
                 animator.SetLookAtWeight(1.0f, 0.5f); // 상체 시선의 가중치 조절
                 animator.SetLookAtPosition(player.position);
-
-                // // 손의 IK 위치를 현재 위치에서 조금 아래로 조정
-                // Vector3 rightHandIKPosition = animator.GetIKPosition(AvatarIKGoal.RightHand);
-                // Vector3 leftHandIKPosition = animator.GetIKPosition(AvatarIKGoal.LeftHand);
-                //
-                // rightHandIKPosition.y -= 0.05f;
-                // leftHandIKPosition.y -= 0.05f;
-                //
-                // animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1.0f);
-                // animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandIKPosition);
-                //
-                // animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
-                // animator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandIKPosition);
             }
             else if (currentTarget)
             {
@@ -183,6 +154,15 @@ public class AudienceGazeController : MonoBehaviour
         }
     }
 
+    // 애니메이션 속도를 랜덤하게 조절하는 함수
+    private void AdjustAnimationSpeed()
+    {
+        if (animator)
+        {
+            float randomSpeed = Random.Range(minAnimationSpeed, maxAnimationSpeed);
+            animator.speed = randomSpeed;
+        }
+    }
 
     void SetRandomTarget()
     {
@@ -195,7 +175,6 @@ public class AudienceGazeController : MonoBehaviour
         }
         else
         {
-            // NONFOCUS 그룹
             maxRange = 4; // 일단 0, 1, 2, 3 중에서 선택
         }
         
@@ -209,6 +188,8 @@ public class AudienceGazeController : MonoBehaviour
                 randomChoice = 3;
             }
         }
+
+        AdjustAnimationSpeed(); // 애니메이션 속도 조절
 
         switch (randomChoice)
         {
@@ -240,11 +221,10 @@ public class AudienceGazeController : MonoBehaviour
                 }
                 break;
         }
+
         // 무작위로 대상과 시간을 선택 
         lookTimer = Random.Range(minLookTime, maxLookTime);
     }
-
-
 
     void TriggerRandomAnimation(int stage)
     {
@@ -263,9 +243,12 @@ public class AudienceGazeController : MonoBehaviour
             return; // 다른 스테이지의 경우 아무것도 하지 않음
         }
 
+        AdjustAnimationSpeed(); // 애니메이션 속도 조절
+
         string selectedTrigger = triggers[Random.Range(0, triggers.Length)];
         animator.SetTrigger(selectedTrigger);
     }
+    
     // 애니메이션이 끝나면 다시 상태 설정 모드로 진입
     public void ResetTiredState()
     {
@@ -273,14 +256,46 @@ public class AudienceGazeController : MonoBehaviour
         SetRandomTarget();
         Debug.Log("피곤상태초기화");
 
+        AdjustAnimationSpeed(); // 애니메이션 속도 조절
+
         currentTarget = player;
     }
     
+    // 발표 완료 시 박수치기
     public void StartClapping()
     {
         if (animator)
         {
             animator.SetTrigger("Clapping");
+            SoundManager.Instance.sfxSource = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
+            SoundManager.Instance.sfxSource.clip = SoundManager.Instance.sfxClips[2];
+            SoundManager.Instance.sfxSource.loop = true;
+            SoundManager.Instance.sfxSource.volume = 0.2f;
+            SoundManager.Instance.sfxSource.Play();
         }
+    }
+
+    public void PlayTypingSound()
+    {
+        SoundManager.Instance.sfxSource = gameObject.GetComponent<AudioSource>();
+        SoundManager.Instance.sfxSource.clip = SoundManager.Instance.sfxClips[3];
+        SoundManager.Instance.sfxSource.Play();
+    }
+
+    public void StopTypingSound()
+    {
+        SoundManager.Instance.sfxSource.Stop();
+    }
+
+    public void PlayIdleSound()
+    {
+        SoundManager.Instance.sfxSource = gameObject.GetComponent<AudioSource>();
+        SoundManager.Instance.sfxSource.clip = SoundManager.Instance.sfxClips[4];
+        SoundManager.Instance.sfxSource.Play();
+    }
+
+    public void StopIdleSound()
+    {
+        SoundManager.Instance.sfxSource.Stop();
     }
 }

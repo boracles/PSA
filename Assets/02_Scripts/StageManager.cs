@@ -97,6 +97,8 @@ public class StageManager : MonoBehaviour
     
     public void SceneChange()
     {
+        SoundManager.Instance.sfxSource.Stop();
+        
         // 현재 씬 이름 확인
         string currentSceneName = SceneManager.GetActiveScene().name;
 

@@ -324,7 +324,7 @@ public class AudienceGazeController : MonoBehaviour
     public void PlayIdleSound()
     {
         gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[4];
-        gameObject.GetComponent<AudioSource>().volume = 0.5f;
+        gameObject.GetComponent<AudioSource>().volume = 0.8f;
         gameObject.GetComponent<AudioSource>().Play();
     }
 
@@ -336,7 +336,7 @@ public class AudienceGazeController : MonoBehaviour
     public void PlayScratchSound()
     {
         gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[5];
-        gameObject.GetComponent<AudioSource>().volume = 0.5f;
+        gameObject.GetComponent<AudioSource>().volume = 0.8f;
         gameObject.GetComponent<AudioSource>().Play();
     }
 
@@ -348,7 +348,7 @@ public class AudienceGazeController : MonoBehaviour
     public void PlayShakeSound()
     {
         gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[6];
-        gameObject.GetComponent<AudioSource>().volume = 0.5f;
+        gameObject.GetComponent<AudioSource>().volume = 0.8f;
         gameObject.GetComponent<AudioSource>().Play();
     }
 
@@ -375,7 +375,7 @@ public class AudienceGazeController : MonoBehaviour
     public void PlayChatSound()
     {
         gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[9];
-        gameObject.GetComponent<AudioSource>().volume = 1.0f;
+        gameObject.GetComponent<AudioSource>().volume = 0.5f;
         gameObject.GetComponent<AudioSource>().Play();
     }
 
@@ -387,21 +387,35 @@ public class AudienceGazeController : MonoBehaviour
     public void YawningSound()
     {
         gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[10];
-        gameObject.GetComponent<AudioSource>().volume = 0.2f;
+        gameObject.GetComponent<AudioSource>().volume = 0.5f;
         gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void StandUpSound()
     {
         gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[11];
-        gameObject.GetComponent<AudioSource>().volume = 0.5f;
+        gameObject.GetComponent<AudioSource>().volume = 1.0f;
         gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void Footstep()
     {
         gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[12];
-        gameObject.GetComponent<AudioSource>().volume = 0.1f;
+        gameObject.GetComponent<AudioSource>().volume = 0.3f;
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
+    public void SnoreSound()
+    {
+        gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[13];
+        gameObject.GetComponent<AudioSource>().volume = 1.0f;
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
+    public void SlapSound()
+    {
+        gameObject.GetComponent<AudioSource>().clip = SoundManager.Instance.sfxClips[14];
+        gameObject.GetComponent<AudioSource>().volume = 0.05f;
         gameObject.GetComponent<AudioSource>().Play();
     }
 }

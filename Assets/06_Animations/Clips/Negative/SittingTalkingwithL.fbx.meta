@@ -62,7 +62,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
+      - time: 0.012658229
         functionName: PlayChatSound
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 6f4c236bcf139a3468c2b417850b9bf4,

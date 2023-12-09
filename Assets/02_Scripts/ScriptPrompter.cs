@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +10,8 @@ public class ScriptPrompter : MonoBehaviour
     private int currentPage = 0; // 현재 페이지 인덱스
     private int linesPerPage = 6; // 페이지 당 표시할 줄 수
     private TMP_TextInfo textInfo;
+
+    public TextMeshProUGUI pageStatusDisplay;
     
     public void StartTextDisplay()
     {
@@ -70,6 +68,10 @@ public class ScriptPrompter : MonoBehaviour
     
     void UpdateTextDisplay()
     {
-        textDisplay.pageToDisplay = currentPage / linesPerPage + 1;
+        int totalPageCount = (textInfo.lineCount - 1) / linesPerPage + 1; // 총 페이지 수 계산
+        int currentPageNumber = currentPage / linesPerPage + 1; // 현재 페이지 번호 계산
+
+        textDisplay.pageToDisplay = currentPageNumber; // 현재 페이지 설정
+        pageStatusDisplay.text = currentPageNumber + "/" + totalPageCount; // 현재 페이지 상태 표시 (예: "3/9")
     }
 }

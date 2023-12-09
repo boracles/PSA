@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3295420c-4658-47de-8628-053291c9e97a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Arrow Left (Short).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Arrow Left (Short).png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Arrow Right (Short).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Arrow Right (Short).png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Frame.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Frame.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/FrameLoading.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/FrameLoading.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/FrameLong.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/FrameLong.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/MeditationFrame.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/MeditationFrame.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Pause.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Pause.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Play.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Play.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/PreparingReportFrame.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/PreparingReportFrame.png.meta" afterDir="false" />
-    </list>
+    <list default="true" id="3295420c-4658-47de-8628-053291c9e97a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +76,7 @@
       <updated>1701343016944</updated>
       <workItem from="1701343054050" duration="2915000" />
       <workItem from="1701543010389" duration="8445000" />
-      <workItem from="1702121849816" duration="1447000" />
+      <workItem from="1702121849816" duration="1478000" />
     </task>
     <servers />
   </component>

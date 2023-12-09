@@ -20,21 +20,21 @@ TagManager:
   - HandPlayer
   - FLOOR
   - OUT
-  - AUDIENCE
   - 
+  - SCRIPT
+  - TIMER
   - 
+  - HEADLEFT
+  - HEADMIDDLELEFT
+  - HEADMIDDLERIGHT
+  - HEADRIGHT
+  - HEADMIDDLE
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BODYLEFT
+  - BODYMIDDLELEFT
+  - BODYMIDDLE
+  - BODYMIDDLERIGHT
+  - BODYRIGHT
   - 
   - 
   - 

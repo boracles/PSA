@@ -64,9 +64,37 @@ public class MeditationController : MonoBehaviour
             meditationVoice.Play();
             subtitlesScript.StartSubtitles();
             isRotating = true;
+            StartCoroutine(UpdateFresnelPowerCoroutine(meditationVoice.clip.length)); // 코루틴 시작
         }
     }
 
+    IEnumerator UpdateFresnelPowerCoroutine(float clipLength)
+    {
+        if (meditationVoice == null || meditationVoice.clip == null)
+        {
+            yield break; // 오디오 소스나 클립이 없으면 코루틴을 종료합니다.
+        }
+        
+        float startTime = Time.time;
+        while (Time.time - startTime <= clipLength)
+        {
+            float playbackProgress = (Time.time - startTime) / clipLength;
+            float fresnelPower = 8 * (1 - playbackProgress);
+
+            if (childMaterial != null)
+            {
+                childMaterial.SetFloat("_FresnelPower", fresnelPower);
+            }
+
+            yield return null; // 다음 프레임까지 대기
+        }
+
+        if (childMaterial != null)
+        {
+            childMaterial.SetFloat("_FresnelPower", 0); // 오디오 클립이 끝나면 fresnelPower를 0으로 설정
+        }
+    }
+    
     void PlayMeditationVoiceinMeditation()
     {
         GameObject.Find("UI/Canvas/Text_MinutesInfo").SetActive(false);
@@ -80,7 +108,6 @@ public class MeditationController : MonoBehaviour
         if (isRotating)
         {
             RotateMeditationCircle();
-            UpdateFresnelPower();
             ThrottledUpdate();
         }
     }
@@ -104,33 +131,6 @@ public class MeditationController : MonoBehaviour
         float rotationAmount = rotationSpeed * Time.deltaTime;
         meditationCircle.transform.parent.Rotate(Vector3.right, rotationAmount);
         currentRotation = (currentRotation + rotationAmount) % 360.0f;
-    }
-
-    private void UpdateFresnelPower()
-    {
-        float fresnelPower;
-
-        if (currentRotation <= 90)
-        {
-            fresnelPower = 8 * (1 - currentRotation / 90.0f);
-        }
-        else if (currentRotation <= 180)
-        {
-            fresnelPower = 8 * ((currentRotation - 90) / 90.0f);
-        }
-        else if (currentRotation <= 270)
-        {
-            fresnelPower = 8 * (1 - (currentRotation - 180) / 90.0f);
-        }
-        else
-        {
-            fresnelPower = 8 * ((currentRotation - 270) / 90.0f);
-        }
-
-        if (childMaterial != null)
-        {
-            childMaterial.SetFloat("_FresnelPower", fresnelPower);
-        }
     }
 
     private void UpdateParticleSystemRadius()

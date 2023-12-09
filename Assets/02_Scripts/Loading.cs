@@ -13,5 +13,6 @@ public class Loading : MonoBehaviour
     {
         GameObject.Find("UI/Canvas/Frame_PreparingReport").SetActive(true);
         gameObject.SetActive(false);
+        gameObject.GetComponent<AudioSource>().Play();
     }
 }

@@ -5,29 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3295420c-4658-47de-8628-053291c9e97a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/01_Scenes/1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scenes/1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/Loading.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/Loading.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Checkmark.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Checkmark.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/DifficultiesFrame.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/DifficultiesFrame.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/ReportFrame.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/ReportFrame.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/ReportLogo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/ReportLogo.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Semi Rounded.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Semi Rounded.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/Computer_B.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/Computer_B.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpetBlue_B.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpetBlue_B.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpetWhite_B.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpetWhite_B.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpetYellow_B.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpetYellow_B.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpet_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpet_AO.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpet_B.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpet_B.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpet_H.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpet_H.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpet_N.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/FloorCarpet_N.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/FlowMap_2.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/FlowMap_2.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/FlowMap_3.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/FlowMap_3.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/Flowmap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/Flowmap.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/Flowmap_5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/Flowmap_5.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/LapTop_B.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/LapTop_B.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/Laptop_E.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/Laptop_E.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/Laptop_MS.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/Laptop_MS.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Textures/Laptop_N.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Textures/Laptop_N.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Arrow Left (Short).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Arrow Left (Short).png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Arrow Right (Short).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Arrow Right (Short).png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Frame.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Frame.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/FrameLoading.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/FrameLoading.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/FrameLong.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/FrameLong.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/MeditationFrame.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/MeditationFrame.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Pause.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Pause.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/Play.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/Play.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Images/Stripes/PreparingReportFrame.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Images/Stripes/PreparingReportFrame.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +86,7 @@
       <updated>1701343016944</updated>
       <workItem from="1701343054050" duration="2915000" />
       <workItem from="1701543010389" duration="8445000" />
-      <workItem from="1702121849816" duration="883000" />
+      <workItem from="1702121849816" duration="1447000" />
     </task>
     <servers />
   </component>

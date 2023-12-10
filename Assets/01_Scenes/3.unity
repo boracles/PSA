@@ -1822,7 +1822,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146624020}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 479698c6385d9244885db6a634635b6d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4563,7 +4563,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1/3
+  m_text: 0/0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e3da83e183b67b49ba3b50c28501722, type: 2}
   m_sharedMaterial: {fileID: 3006352019630965128, guid: 5e3da83e183b67b49ba3b50c28501722,
@@ -14658,6 +14658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 297602102319057232, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
+      propertyPath: useMovement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 297602102319057232, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
+        type: 3}
       propertyPath: allowClimbing
       value: 0
       objectReference: {fileID: 0}
@@ -14674,7 +14679,7 @@ PrefabInstance:
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}

@@ -1644,12 +1644,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!4 &472896622 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 297602102803471800, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2025998542}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &495391370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2345,12 +2339,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5609554525450592402, guid: c808236ebf3e1394e864c09295063382, type: 3}
---- !u!4 &727280514 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 297602103061316597, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2025998542}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &742922854 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5021173816080382550, guid: c808236ebf3e1394e864c09295063382,
@@ -5557,6 +5545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 297602102319057232, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
+      propertyPath: useMovement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 297602102319057232, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
+        type: 3}
       propertyPath: allowClimbing
       value: 0
       objectReference: {fileID: 0}
@@ -5569,6 +5562,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 297602103752395643, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
@@ -5605,6 +5603,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 574814002214687028, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
+        type: 3}
+      propertyPath: enableMovement
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1172163602495829170, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: m_IsActive
@@ -5624,7 +5627,7 @@ PrefabInstance:
         type: 3}
       propertyPath: leftOffsets.Array.data[1]
       value: 
-      objectReference: {fileID: 727280514}
+      objectReference: {fileID: 0}
     - target: {fileID: 3107847255291254994, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: rightOffsets.Array.data[0]
@@ -5634,7 +5637,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rightOffsets.Array.data[1]
       value: 
-      objectReference: {fileID: 472896622}
+      objectReference: {fileID: 0}
     - target: {fileID: 7214012720012497621, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: enableDynamicResolution

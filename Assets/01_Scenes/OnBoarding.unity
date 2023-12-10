@@ -5606,7 +5606,7 @@ PrefabInstance:
     - target: {fileID: 574814002214687028, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
       propertyPath: enableMovement
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1172163602495829170, guid: 4854c80cf48d01e44bfe786e8cf18e3a,
         type: 3}
